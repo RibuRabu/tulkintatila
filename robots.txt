@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-LLMS: https://tulkintatila.fi/llms.txt
+LLMS: https://riburabu.github.io/tulkintatila/llms.txt
