@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+LLMS: https://tulkintatila.fi/llms.txt
