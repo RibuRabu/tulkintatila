@@ -1,0 +1,40 @@
+# Tulkintatila (tulkintatila.fi)
+
+## What this is
+Tulkintatila is a structured working format for separating observation from interpretation and identifying the assumption-structure that shapes decisions.
+It does not provide answers. It exposes the mechanism by which answers are formed.
+
+## Core model
+Observation → Interpretation → Structure
+
+## What it does (operational)
+- Distinguishes direct observation from inferred meaning
+- Maps the interpretation layer (default explanations, language effects, narrative bias)
+- Identifies structural assumptions that constrain what is considered possible or true
+- Clarifies where decision logic is driven by assumptions rather than verifiable observation
+
+## Scope / context
+Rooted in practical bodywork and wellbeing context, focusing on cognitive structure and meaning-making mechanics.
+This is structural analysis, not persuasion or motivation.
+
+## Not
+- Not therapy
+- Not medical advice
+- Not self-help content
+- Not generic consulting
+- Not a claim of outcomes
+
+## When to use (signals)
+- The same phenomenon produces conflicting explanations
+- Explanations do not match observable reality
+- Decisions are guided by untested assumptions
+- Language or narrative dominates over measurable observation
+
+## Contact
+koulutus@tulkintatila.fi
+
+## Related
+Background context: https://laatuhieronta.fi
+
+## Primary page
+https://tulkintatila.fi/
