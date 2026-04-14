@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+LLMS: https://riburabu.github.io/tulkintatila/llms.txt
