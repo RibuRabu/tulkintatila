@@ -24,7 +24,7 @@
 
     <main>
       <section class="hero">
-        <div class="wrap hero-grid">
+        <div class="wrap">
           <div class="hero-main">
             <p class="section-index">01</p>
             <h1>Tulkintatila on labra- ja arkistotila järjestelmille, arkkitehtuuripäätöksille ja dokumentoidulle tekniselle ajattelulle.</h1>
@@ -51,40 +51,55 @@
             <h2>Valitut caset</h2>
           </div>
 
-          <div class="case-grid">
-            <article class="case-card">
+          <div class="case-list">
+            <article class="case-block">
               <h3>Liminall Node</h3>
               <p>
                 Solmukohtaan perustuva järjestelmärakenne, jossa sisältö, tilat ja siirtymät
                 jäsennetään hallittaviksi yksiköiksi ilman raskasta käyttöliittymäkerrosta.
               </p>
               <p class="meta">Rakenne, tilamalli, rajapinnat</p>
+              <div class="example-block">
+                <p><strong>havainto:</strong> sisällön, tilan ja siirtymien hallinta hajautuu helposti eri kerroksiin</p>
+                <p><strong>tulkinta:</strong> kokonaisuus tarvitsee selvästi rajatun rakenteen, ei lisää näkymiä</p>
+                <p><strong>johtopäätös:</strong> rakenne keskitetään solmukohtiin, jotta logiikka pysyy luettavana</p>
+              </div>
             </article>
 
-            <article class="case-card">
+            <article class="case-block">
               <h3>Ajanvarausjärjestelmä</h3>
               <p>
                 Varauslogiikkaa, saatavuuden hallintaa ja palvelupolun ehtoja tarkasteleva
                 järjestelmäkokonaisuus, jossa käyttöliittymä sidotaan suoraan operatiiviseen logiikkaan.
               </p>
               <p class="meta">Saatavuus, sessiot, päätössäännöt</p>
+              <div class="example-block">
+                <p><strong>havainto:</strong> saatavuus, kesken jääneet vaiheet ja ehdot muuttavat toistensa merkitystä</p>
+                <p><strong>tulkinta:</strong> varauspolku ei ole pelkkä lomake vaan päätöslogiikan ketju</p>
+                <p><strong>johtopäätös:</strong> käyttöliittymä rakennetaan lukemaan samaa logiikkaa kuin järjestelmä itse</p>
+              </div>
             </article>
 
-            <article class="case-card">
+            <article class="case-block">
               <h3>AI-arkkitehtuuri / työnkulut</h3>
               <p>
                 Malliroolien, vaiheistetun työnjaon ja dokumentoidun arvioinnin ympärille
                 rakennettuja työnkulkuja, joissa AI toimii osana tuotannollista järjestelmää.
               </p>
               <p class="meta">Roolitus, orkestrointi, arviointiketju</p>
+              <div class="example-block">
+                <p><strong>havainto:</strong> yksi malli ei kanna koko tuotannollista vastuuta luotettavasti</p>
+                <p><strong>tulkinta:</strong> roolit, tarkistukset ja vaiheistus on erotettava toisistaan</p>
+                <p><strong>johtopäätös:</strong> AI liitetään järjestelmään työnjaon kautta, ei yleisenä mustana laatikkona</p>
+              </div>
             </article>
           </div>
         </div>
       </section>
 
       <section id="mista-on-kyse" class="section framing">
-        <div class="wrap framing-grid">
-          <div>
+        <div class="wrap">
+          <div class="section-head">
             <p class="section-index">03</p>
             <h2>Ei henkilöbrändin portfolio</h2>
           </div>
@@ -110,8 +125,8 @@
             <h2>Arkkitehtuuriteemat</h2>
           </div>
 
-          <div class="theme-grid">
-            <article class="theme-card">
+          <div class="theme-list">
+            <article class="theme-block">
               <h3>Järjestelmärajat</h3>
               <p>
                 Missä käyttöliittymä loppuu, missä sovelluslogiikka alkaa ja mitä ei pidä
@@ -119,7 +134,7 @@
               </p>
             </article>
 
-            <article class="theme-card">
+            <article class="theme-block">
               <h3>Infrastruktuurin minimi</h3>
               <p>
                 Mikä on pienin toimiva rakenne, jolla palvelu voidaan julkaista, ylläpitää
@@ -127,7 +142,7 @@
               </p>
             </article>
 
-            <article class="theme-card">
+            <article class="theme-block">
               <h3>Sessiot ja jatkuvuus</h3>
               <p>
                 Miten käyttäjätila, varausvaiheet, luonnokset tai kesken jäänyt työ säilyvät
@@ -135,7 +150,7 @@
               </p>
             </article>
 
-            <article class="theme-card">
+            <article class="theme-block">
               <h3>AI-roolit järjestelmässä</h3>
               <p>
                 Milloin AI toimii kirjoittajana, arvioijana, luokittelijana tai työparina,
@@ -143,7 +158,7 @@
               </p>
             </article>
 
-            <article class="theme-card">
+            <article class="theme-block">
               <h3>Päätöslogiikka</h3>
               <p>
                 Millä ehdoilla järjestelmä hyväksyy, estää, siirtää tai priorisoi toimintaa,
@@ -151,7 +166,7 @@
               </p>
             </article>
 
-            <article class="theme-card">
+            <article class="theme-block">
               <h3>Dokumentoitu tulkinta</h3>
               <p>
                 Pelkkä lopputulos ei riitä: myös perustelut, vaihtoehdot ja hylätyt polut
