@@ -11,178 +11,190 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header class="site-header">
-      <div class="wrap">
-        <p class="site-id">lab.tulkintatila.fi</p>
+    <div class="page-shell">
+      <header class="hero">
+        <p class="eyebrow">lab.tulkintatila.fi</p>
         <nav class="site-nav" aria-label="Päänavigaatio">
           <a href="#caset">Caset</a>
           <a href="#mista-on-kyse">Mistä on kyse</a>
           <a href="#teemat">Teemat</a>
         </nav>
-      </div>
-    </header>
+        <h1>
+          Tulkintatila on labra- ja arkistotila järjestelmille,
+          arkkitehtuuripäätöksille ja dokumentoidulle tekniselle ajattelulle.
+        </h1>
+        <div class="example-card">
+          <p>
+            Sivu kokoaa näkyviin koodiprojekteja, tapauslogiikkaa, järjestelmärakenteita,
+            AI-avusteisia työnkulkuja ja niiden taustalla tehtyjä rajaus- ja
+            päätösratkaisuja.
+          </p>
+          <ul>
+            <li>Koodi ja toteutus</li>
+            <li>Järjestelmät ja rajat</li>
+            <li>Arkkitehtuurin perustelut</li>
+            <li>Dokumentoitu päätöslogiikka</li>
+          </ul>
+        </div>
+      </header>
 
-    <main>
-      <section class="hero">
-        <div class="wrap">
-          <div class="hero-main">
-            <p class="section-index">01</p>
-            <h1>Tulkintatila on labra- ja arkistotila järjestelmille, arkkitehtuuripäätöksille ja dokumentoidulle tekniselle ajattelulle.</h1>
-          </div>
-          <div class="hero-side">
+      <main>
+        <section id="caset" class="section">
+          <p class="eyebrow">01</p>
+          <h2>Valitut caset</h2>
+
+          <article class="case-block">
+            <h3>Liminal Node</h3>
             <p>
-              Sivu kokoaa näkyviin koodiprojekteja, tapauslogiikkaa, järjestelmärakenteita,
-              AI-avusteisia työnkulkuja ja niiden taustalla tehtyjä rajaus- ja päätösratkaisuja.
+              Solmukohtaan perustuva järjestelmärakenne, jossa sisältö, tilat ja
+              siirtymät jäsennetään hallittaviksi yksiköiksi ilman raskasta
+              käyttöliittymäkerrosta.
             </p>
-            <ul class="hero-list">
-              <li>Koodi ja toteutus</li>
-              <li>Järjestelmät ja rajat</li>
-              <li>Arkkitehtuurin perustelut</li>
-              <li>Dokumentoitu päätöslogiikka</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section id="caset" class="section">
-        <div class="wrap">
-          <div class="section-head">
-            <p class="section-index">02</p>
-            <h2>Valitut caset</h2>
-          </div>
-
-          <div class="case-list">
-            <article class="case-block">
-              <h3>Liminall Node</h3>
+            <p class="meta">Rakenne, tilamalli, rajapinnat</p>
+            <div class="example-card">
               <p>
-                Solmukohtaan perustuva järjestelmärakenne, jossa sisältö, tilat ja siirtymät
-                jäsennetään hallittaviksi yksiköiksi ilman raskasta käyttöliittymäkerrosta.
+                <strong>havainto:</strong> sisällön, tilan ja siirtymien hallinta hajautuu
+                helposti eri kerroksiin
               </p>
-              <p class="meta">Rakenne, tilamalli, rajapinnat</p>
-              <div class="example-block">
-                <p><strong>havainto:</strong> sisällön, tilan ja siirtymien hallinta hajautuu helposti eri kerroksiin</p>
-                <p><strong>tulkinta:</strong> kokonaisuus tarvitsee selvästi rajatun rakenteen, ei lisää näkymiä</p>
-                <p><strong>johtopäätös:</strong> rakenne keskitetään solmukohtiin, jotta logiikka pysyy luettavana</p>
-              </div>
-            </article>
-
-            <article class="case-block">
-              <h3>Ajanvarausjärjestelmä</h3>
               <p>
-                Varauslogiikkaa, saatavuuden hallintaa ja palvelupolun ehtoja tarkasteleva
-                järjestelmäkokonaisuus, jossa käyttöliittymä sidotaan suoraan operatiiviseen logiikkaan.
+                <strong>tulkinta:</strong> kokonaisuus tarvitsee selvästi rajatun rakenteen,
+                ei lisää näkymiä
               </p>
-              <p class="meta">Saatavuus, sessiot, päätössäännöt</p>
-              <div class="example-block">
-                <p><strong>havainto:</strong> saatavuus, kesken jääneet vaiheet ja ehdot muuttavat toistensa merkitystä</p>
-                <p><strong>tulkinta:</strong> varauspolku ei ole pelkkä lomake vaan päätöslogiikan ketju</p>
-                <p><strong>johtopäätös:</strong> käyttöliittymä rakennetaan lukemaan samaa logiikkaa kuin järjestelmä itse</p>
-              </div>
-            </article>
-
-            <article class="case-block">
-              <h3>AI-arkkitehtuuri / työnkulut</h3>
               <p>
-                Malliroolien, vaiheistetun työnjaon ja dokumentoidun arvioinnin ympärille
-                rakennettuja työnkulkuja, joissa AI toimii osana tuotannollista järjestelmää.
+                <strong>johtopäätös:</strong> rakenne keskitetään solmukohtiin, jotta
+                logiikka pysyy luettavana
               </p>
-              <p class="meta">Roolitus, orkestrointi, arviointiketju</p>
-              <div class="example-block">
-                <p><strong>havainto:</strong> yksi malli ei kanna koko tuotannollista vastuuta luotettavasti</p>
-                <p><strong>tulkinta:</strong> roolit, tarkistukset ja vaiheistus on erotettava toisistaan</p>
-                <p><strong>johtopäätös:</strong> AI liitetään järjestelmään työnjaon kautta, ei yleisenä mustana laatikkona</p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
+            </div>
+          </article>
 
-      <section id="mista-on-kyse" class="section framing">
-        <div class="wrap">
-          <div class="section-head">
-            <p class="section-index">03</p>
-            <h2>Ei henkilöbrändin portfolio</h2>
-          </div>
-          <div class="framing-text">
+          <article class="case-block">
+            <h3>Ajanvarausjärjestelmä</h3>
             <p>
-              Tämä ei ole yleinen esittelysivu palveluista, persoonasta tai visuaalisesta
-              portfoliosta. Tulkintatila toimii paikkana, jossa järjestelmät ja niitä ohjaavat
-              päätökset tehdään luettaviksi.
+              Varauslogiikkaa, saatavuuden hallintaa ja palvelupolun ehtoja
+              tarkasteleva järjestelmäkokonaisuus, jossa käyttöliittymä sidotaan
+              suoraan operatiiviseen logiikkaan.
+            </p>
+            <p class="meta">Saatavuus, sessiot, päätössäännöt</p>
+            <div class="example-card">
+              <p>
+                <strong>havainto:</strong> saatavuus, kesken jääneet vaiheet ja ehdot
+                muuttavat toistensa merkitystä
+              </p>
+              <p>
+                <strong>tulkinta:</strong> varauspolku ei ole pelkkä lomake vaan
+                päätöslogiikan ketju
+              </p>
+              <p>
+                <strong>johtopäätös:</strong> käyttöliittymä rakennetaan lukemaan samaa
+                logiikkaa kuin järjestelmä itse
+              </p>
+            </div>
+          </article>
+
+          <article class="case-block">
+            <h3>AI-arkkitehtuuri / työnkulut</h3>
+            <p>
+              Malliroolien, vaiheistetun työnjaon ja dokumentoidun arvioinnin
+              ympärille rakennettuja työnkulkuja, joissa AI toimii osana
+              tuotannollista järjestelmää.
+            </p>
+            <p class="meta">Roolitus, orkestrointi, arviointiketju</p>
+            <div class="example-card">
+              <p>
+                <strong>havainto:</strong> yksi malli ei kanna koko tuotannollista vastuuta
+                luotettavasti
+              </p>
+              <p>
+                <strong>tulkinta:</strong> roolit, tarkistukset ja vaiheistus on erotettava
+                toisistaan
+              </p>
+              <p>
+                <strong>johtopäätös:</strong> AI liitetään järjestelmään työnjaon kautta,
+                ei yleisenä mustana laatikkona
+              </p>
+            </div>
+          </article>
+        </section>
+
+        <section id="mista-on-kyse" class="section">
+          <p class="eyebrow">02</p>
+          <h2>Ei henkilöbrändin portfolio</h2>
+          <div class="example-card">
+            <p>
+              Tämä ei ole yleinen esittelysivu palveluista, persoonasta tai
+              visuaalisesta portfoliosta. Tulkintatila toimii paikkana, jossa
+              järjestelmät ja niitä ohjaavat päätökset tehdään luettaviksi.
             </p>
             <p>
-              Painopiste on siinä, miten ratkaisu on rakennettu, missä sen rajat kulkevat,
-              mitä oletuksia se sisältää ja miten valinnat on perusteltu. Näkyville tuodaan
-              sekä toteutus että tulkinta: rakenne, logiikka, käyttötilanteet ja muutoksen ehdot.
+              Painopiste on siinä, miten ratkaisu on rakennettu, missä sen rajat
+              kulkevat, mitä oletuksia se sisältää ja miten valinnat on
+              perusteltu. Näkyville tuodaan sekä toteutus että tulkinta: rakenne,
+              logiikka, käyttötilanteet ja muutoksen ehdot.
             </p>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="teemat" class="section">
-        <div class="wrap">
-          <div class="section-head">
-            <p class="section-index">04</p>
-            <h2>Arkkitehtuuriteemat</h2>
-          </div>
+        <section id="teemat" class="section">
+          <p class="eyebrow">03</p>
+          <h2>Arkkitehtuuriteemat</h2>
 
-          <div class="theme-list">
-            <article class="theme-block">
-              <h3>Järjestelmärajat</h3>
-              <p>
-                Missä käyttöliittymä loppuu, missä sovelluslogiikka alkaa ja mitä ei pidä
-                sekoittaa samaan kerrokseen.
-              </p>
-            </article>
+          <article class="theme-block">
+            <h3>Järjestelmärajat</h3>
+            <p>
+              Missä käyttöliittymä loppuu, missä sovelluslogiikka alkaa ja mitä ei
+              pidä sekoittaa samaan kerrokseen.
+            </p>
+          </article>
 
-            <article class="theme-block">
-              <h3>Infrastruktuurin minimi</h3>
-              <p>
-                Mikä on pienin toimiva rakenne, jolla palvelu voidaan julkaista, ylläpitää
-                ja tehdä havaittavaksi ilman turhaa monimutkaisuutta.
-              </p>
-            </article>
+          <article class="theme-block">
+            <h3>Infrastruktuurin minimi</h3>
+            <p>
+              Mikä on pienin toimiva rakenne, jolla palvelu voidaan julkaista,
+              ylläpitää ja tehdä havaittavaksi ilman turhaa monimutkaisuutta.
+            </p>
+          </article>
 
-            <article class="theme-block">
-              <h3>Sessiot ja jatkuvuus</h3>
-              <p>
-                Miten käyttäjätila, varausvaiheet, luonnokset tai kesken jäänyt työ säilyvät
-                hallitusti järjestelmän eri vaiheissa.
-              </p>
-            </article>
+          <article class="theme-block">
+            <h3>Sessiot ja jatkuvuus</h3>
+            <p>
+              Miten käyttäjätila, varausvaiheet, luonnokset tai kesken jäänyt työ
+              säilyvät hallitusti järjestelmän eri vaiheissa.
+            </p>
+          </article>
 
-            <article class="theme-block">
-              <h3>AI-roolit järjestelmässä</h3>
-              <p>
-                Milloin AI toimii kirjoittajana, arvioijana, luokittelijana tai työparina,
-                ja miten nämä roolit erotetaan toisistaan.
-              </p>
-            </article>
+          <article class="theme-block">
+            <h3>AI-roolit järjestelmässä</h3>
+            <p>
+              Milloin AI toimii kirjoittajana, arvioijana, luokittelijana tai
+              työparina, ja miten nämä roolit erotetaan toisistaan.
+            </p>
+          </article>
 
-            <article class="theme-block">
-              <h3>Päätöslogiikka</h3>
-              <p>
-                Millä ehdoilla järjestelmä hyväksyy, estää, siirtää tai priorisoi toimintaa,
-                ja miten nämä säännöt tehdään näkyviksi.
-              </p>
-            </article>
+          <article class="theme-block">
+            <h3>Päätöslogiikka</h3>
+            <p>
+              Millä ehdoilla järjestelmä hyväksyy, estää, siirtää tai priorisoi
+              toimintaa, ja miten nämä säännöt tehdään näkyviksi.
+            </p>
+          </article>
 
-            <article class="theme-block">
-              <h3>Dokumentoitu tulkinta</h3>
-              <p>
-                Pelkkä lopputulos ei riitä: myös perustelut, vaihtoehdot ja hylätyt polut
-                kuuluvat osaksi arkkitehtuuria.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-    </main>
+          <article class="theme-block">
+            <h3>Dokumentoitu tulkinta</h3>
+            <p>
+              Pelkkä lopputulos ei riitä: myös perustelut, vaihtoehdot ja hylätyt
+              polut kuuluvat osaksi arkkitehtuuria.
+            </p>
+          </article>
+        </section>
+      </main>
 
-    <footer class="site-footer">
-      <div class="wrap footer-inner">
-        <p class="footer-mark">Tulkintatila Lab</p>
-        <p class="footer-text">Rakennetut järjestelmät, näkyvä päätöslogiikka ja dokumentoitu tekninen ajattelu.</p>
-      </div>
-    </footer>
+      <footer class="footer">
+        <p>Tulkintatila Lab</p>
+        <p>
+          Rakennetut järjestelmät, näkyvä päätöslogiikka ja dokumentoitu
+          tekninen ajattelu.
+        </p>
+      </footer>
+    </div>
   </body>
 </html>
