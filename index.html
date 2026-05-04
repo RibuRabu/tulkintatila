@@ -6,7 +6,7 @@
     <title>Tulkintatila Lab</title>
     <meta
       name="description"
-      content="Tulkintatilan labra- ja arkistosivu: koodiprojekteja, järjestelmiä, arkkitehtuuriratkaisuja ja dokumentoitua ajattelua."
+      content="Tulkintatilan labra- ja arkistosivu: verkkosivuja, kevyitä järjestelmiä, ajanvarausratkaisuja ja AI-avusteisia työnkulkuja."
     />
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -18,6 +18,7 @@
           <a href="#caset">Caset</a>
           <a href="#mista-on-kyse">Mistä on kyse</a>
           <a href="#teemat">Teemat</a>
+          <a href="#yhteys">Yhteys</a>
         </nav>
         <h1>
           Tulkintatila on labra- ja arkistotila järjestelmille,
@@ -25,16 +26,14 @@
         </h1>
         <div class="example-card">
           <p>
-            Sivu kokoaa näkyviin koodiprojekteja, tapauslogiikkaa, järjestelmärakenteita,
-            AI-avusteisia työnkulkuja ja niiden taustalla tehtyjä rajaus- ja
-            päätösratkaisuja.
+            Tämä labra näyttää, miten ajattelu muuttuu toimiviksi digitaalisiksi
+            ratkaisuiksi: verkkosivuiksi, kevyiksi räätälöidyiksi järjestelmiksi,
+            ajanvaraustyökaluiksi ja AI-avusteisiksi työnkuluiksi.
           </p>
-          <ul>
-            <li>Koodi ja toteutus</li>
-            <li>Järjestelmät ja rajat</li>
-            <li>Arkkitehtuurin perustelut</li>
-            <li>Dokumentoitu päätöslogiikka</li>
-          </ul>
+          <p>
+            Painopiste ei ole yleisessä esittelyssä vaan siinä, miten rakenne,
+            rajaukset, käyttötilanteet ja päätöslogiikka tehdään näkyviksi.
+          </p>
         </div>
       </header>
 
@@ -42,94 +41,118 @@
         <section id="caset" class="section">
           <p class="eyebrow">01</p>
           <h2>Valitut caset</h2>
+          <p>
+            Caset kuvaavat käytännön toteutuksia, joissa suunnittelu, sisältö,
+            järjestelmärakenne ja käyttölogiikka sidotaan samaan kokonaisuuteen.
+          </p>
 
           <article class="case-block">
-            <h3>Liminal Node</h3>
+            <img
+              src="images/liminall-node.png"
+              alt="Liminall Node -järjestelmän näkymä"
+              class="case-image"
+            />
+            <h3>Liminall Node</h3>
             <p>
-              Solmukohtaan perustuva järjestelmärakenne, jossa sisältö, tilat ja
-              siirtymät jäsennetään hallittaviksi yksiköiksi ilman raskasta
-              käyttöliittymäkerrosta.
+              Solmukohtiin perustuva rakenne, jossa sisältö, tila ja siirtymät
+              jäsennetään hallittaviksi yksiköiksi ilman raskasta
+              käyttöliittymäkerrosta. Tavoitteena on pitää logiikka luettavana
+              myös silloin, kun järjestelmä kasvaa.
             </p>
             <p class="meta">Rakenne, tilamalli, rajapinnat</p>
-            <div class="example-card">
-              <p>
-                <strong>havainto:</strong> sisällön, tilan ja siirtymien hallinta hajautuu
-                helposti eri kerroksiin
-              </p>
-              <p>
-                <strong>tulkinta:</strong> kokonaisuus tarvitsee selvästi rajatun rakenteen,
-                ei lisää näkymiä
-              </p>
-              <p>
-                <strong>johtopäätös:</strong> rakenne keskitetään solmukohtiin, jotta
-                logiikka pysyy luettavana
-              </p>
-            </div>
           </article>
 
           <article class="case-block">
+            <img
+              src="images/ajanvaraus.png"
+              alt="Ajanvarausjärjestelmän näkymä"
+              class="case-image"
+            />
             <h3>Ajanvarausjärjestelmä</h3>
             <p>
               Varauslogiikkaa, saatavuuden hallintaa ja palvelupolun ehtoja
-              tarkasteleva järjestelmäkokonaisuus, jossa käyttöliittymä sidotaan
-              suoraan operatiiviseen logiikkaan.
+              kokoava järjestelmä, jossa käyttöliittymä ei toimi irrallisena
+              pintana vaan lukee samaa päätöslogiikkaa kuin itse järjestelmä.
             </p>
             <p class="meta">Saatavuus, sessiot, päätössäännöt</p>
-            <div class="example-card">
-              <p>
-                <strong>havainto:</strong> saatavuus, kesken jääneet vaiheet ja ehdot
-                muuttavat toistensa merkitystä
-              </p>
-              <p>
-                <strong>tulkinta:</strong> varauspolku ei ole pelkkä lomake vaan
-                päätöslogiikan ketju
-              </p>
-              <p>
-                <strong>johtopäätös:</strong> käyttöliittymä rakennetaan lukemaan samaa
-                logiikkaa kuin järjestelmä itse
-              </p>
-            </div>
           </article>
 
           <article class="case-block">
-            <h3>AI-arkkitehtuuri / työnkulut</h3>
+            <img
+              src="images/myyntiagentti.png"
+              alt="Myyntiagentin näkymä"
+              class="case-image"
+            />
+            <h3>Myyntiagentti</h3>
             <p>
-              Malliroolien, vaiheistetun työnjaon ja dokumentoidun arvioinnin
-              ympärille rakennettuja työnkulkuja, joissa AI toimii osana
-              tuotannollista järjestelmää.
+              Työkalu, joka tukee myyntityötä kokoamalla yhteen havaintoja,
+              yhteydenottoja ja seuraavia toimenpiteitä. Tarkoitus ei ole
+              automatisoida suhdetta, vaan tehdä eteneminen näkyväksi ja
+              hallituksi.
+            </p>
+            <p class="meta">Prosessi, seuranta, työvirta</p>
+          </article>
+
+          <article class="case-block">
+            <img
+              src="images/verkkosivut.png"
+              alt="Verkkosivutoteutuksen näkymä"
+              class="case-image"
+            />
+            <h3>Verkkosivut</h3>
+            <p>
+              Sisältölähtöisiä verkkosivuja, joissa rakenne, kieli ja tekninen
+              toteutus tukevat samaa tarkoitusta. Pienikin sivusto voi olla
+              tarkasti rakennettu järjestelmä, ei vain irrallinen julkisivu.
+            </p>
+            <p class="meta">Sisältörakenne, julkaisu, ylläpidettävyys</p>
+          </article>
+
+          <article class="case-block">
+            <img
+              src="images/havainnointityokalu.png"
+              alt="Tulkintatila-havainnointityökalun näkymä"
+              class="case-image"
+            />
+            <h3>Tulkintatila-havainnointityökalu</h3>
+            <p>
+              Havaintojen kirjaamiseen, jäsentämiseen ja tulkinnan tueksi tehty
+              työkalu, jossa olennaista on selkeä suhde merkintöjen,
+              luokittelun ja myöhemmän käytön välillä.
+            </p>
+            <p class="meta">Havainnot, luokittelu, dokumentaatio</p>
+          </article>
+
+          <article class="case-block">
+            <img
+              src="images/ai-arkkitehtuuri.png"
+              alt="AI-arkkitehtuurin ja työnkulkujen näkymä"
+              class="case-image"
+            />
+            <h3>AI-arkkitehtuuri ja työnkulut</h3>
+            <p>
+              Vaiheistettuja työnkulkuja, joissa AI toimii osana tuotannollista
+              järjestelmää selkeästi rajatuissa rooleissa. Olennaista on erottaa
+              kirjoittaminen, arviointi, tarkistus ja orkestrointi toisistaan.
             </p>
             <p class="meta">Roolitus, orkestrointi, arviointiketju</p>
-            <div class="example-card">
-              <p>
-                <strong>havainto:</strong> yksi malli ei kanna koko tuotannollista vastuuta
-                luotettavasti
-              </p>
-              <p>
-                <strong>tulkinta:</strong> roolit, tarkistukset ja vaiheistus on erotettava
-                toisistaan
-              </p>
-              <p>
-                <strong>johtopäätös:</strong> AI liitetään järjestelmään työnjaon kautta,
-                ei yleisenä mustana laatikkona
-              </p>
-            </div>
           </article>
         </section>
 
         <section id="mista-on-kyse" class="section">
           <p class="eyebrow">02</p>
-          <h2>Ei henkilöbrändin portfolio</h2>
+          <h2>Mistä on kyse</h2>
           <div class="example-card">
             <p>
-              Tämä ei ole yleinen esittelysivu palveluista, persoonasta tai
-              visuaalisesta portfoliosta. Tulkintatila toimii paikkana, jossa
-              järjestelmät ja niitä ohjaavat päätökset tehdään luettaviksi.
+              Tämä ei ole yleinen portfolio henkilölle tai palvelulistalle.
+              Tulkintatila toimii paikkana, jossa tehdään näkyväksi, miten
+              digitaaliset ratkaisut rakentuvat käytännössä.
             </p>
             <p>
-              Painopiste on siinä, miten ratkaisu on rakennettu, missä sen rajat
-              kulkevat, mitä oletuksia se sisältää ja miten valinnat on
-              perusteltu. Näkyville tuodaan sekä toteutus että tulkinta: rakenne,
-              logiikka, käyttötilanteet ja muutoksen ehdot.
+              Olennaista on, miten ratkaisu on rajattu, mitä sen pitää tehdä,
+              mihin kohtaan käyttöä logiikka sijoittuu ja millä perusteilla
+              rakenne on valittu. Lopputulos on tärkeä, mutta myös sen
+              perustelut kuuluvat näkyviin.
             </p>
           </div>
         </section>
@@ -141,8 +164,8 @@
           <article class="theme-block">
             <h3>Järjestelmärajat</h3>
             <p>
-              Missä käyttöliittymä loppuu, missä sovelluslogiikka alkaa ja mitä ei
-              pidä sekoittaa samaan kerrokseen.
+              Missä käyttöliittymä loppuu, missä sovelluslogiikka alkaa ja mitä
+              ei pidä sekoittaa samaan kerrokseen.
             </p>
           </article>
 
@@ -186,6 +209,23 @@
             </p>
           </article>
         </section>
+
+        <section id="yhteys" class="section">
+          <p class="eyebrow">04</p>
+          <h2>Tarvitsetko oman kevyen järjestelmän?</h2>
+          <div class="example-card">
+            <p>
+              Jos valmiit työkalut eivät sovi työn rakenteeseen, niiden väliin on
+              mahdollista rakentaa pienempi, selkeämpi ja tarkoitukseen tehty
+              ratkaisu. Se voi olla verkkosivu, ajanvarauksen osa, sisäinen
+              työkalu tai rajattu työnkulku.
+            </p>
+            <p>
+              Yhteys:
+              <a href="mailto:hello@tulkintatila.fi">hello@tulkintatila.fi</a>
+            </p>
+          </div>
+        </section>
       </main>
 
       <footer class="footer">
@@ -193,6 +233,9 @@
         <p>
           Rakennetut järjestelmät, näkyvä päätöslogiikka ja dokumentoitu
           tekninen ajattelu.
+        </p>
+        <p>
+          <a href="https://tulkintatila.fi/">Siirry pääsivulle: tulkintatila.fi</a>
         </p>
       </footer>
     </div>
