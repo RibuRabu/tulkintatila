@@ -54,12 +54,45 @@
             />
             <h3>Liminall Node</h3>
             <p>
-              Solmukohtiin perustuva rakenne, jossa sisältö, tila ja siirtymät
-              jäsennetään hallittaviksi yksiköiksi ilman raskasta
-              käyttöliittymäkerrosta. Tavoitteena on pitää logiikka luettavana
-              myös silloin, kun järjestelmä kasvaa.
+              Solmukohtiin perustuva järjestelmämalli, jossa sisältö, tilat ja
+              siirtymät kuvataan erillisinä mutta toisiinsa sidottuina
+              yksikköinä.
+            </p>
+            <p>
+              Rakennettu osa sisältää rakenteen mallinnuksen, tilanhallinnan ja
+              rajapintojen jäsentelyn niin, että logiikka pysyy luettavana ilman
+              raskasta käyttöliittymäkerrosta.
+            </p>
+            <p>
+              Case mallintaa tilannetta, jossa järjestelmä kasvaa haarautuvaksi
+              ja tarvitsee selkeän tavan kuvata riippuvuuksia, reittejä ja
+              päätöskohtia.
             </p>
             <p class="meta">Rakenne, tilamalli, rajapinnat</p>
+          </article>
+
+          <article class="case-block">
+            <img
+              src="images/nfc-kirja.png"
+              alt="NFC-kirjan näkymä"
+              class="case-image"
+            />
+            <h3>NFC-kirja</h3>
+            <p>
+              NFC-kirja on fyysisen objektin ja digitaalisen sisällön väliin
+              rakennettu julkaisu- ja tunnistusratkaisu.
+            </p>
+            <p>
+              Rakennettu osa kattaa NFC-pisteiden kytkennän sisältöön,
+              sisällön ohjauksen sekä julkaisumallin, jossa fyysinen kosketus
+              laukaisee oikean digitaalisen näkymän.
+            </p>
+            <p>
+              Case ratkaisee tilanteen, jossa painettu tai fyysinen formaatti
+              tarvitsee hallitun tavan avata kontekstisidonnaista tietoa ilman
+              erillistä sovelluspolkua.
+            </p>
+            <p class="meta">NFC, sisällönohjaus, julkaisu</p>
           </article>
 
           <article class="case-block">
@@ -70,42 +103,20 @@
             />
             <h3>Ajanvarausjärjestelmä</h3>
             <p>
-              Varauslogiikkaa, saatavuuden hallintaa ja palvelupolun ehtoja
-              kokoava järjestelmä, jossa käyttöliittymä ei toimi irrallisena
-              pintana vaan lukee samaa päätöslogiikkaa kuin itse järjestelmä.
+              Ajanvarausjärjestelmä, jossa saatavuus, palvelut, vaiheet ja
+              varauksen ehdot luetaan samasta rakenteesta.
+            </p>
+            <p>
+              Rakennettu osa sisältää varauslogiikan, saatavuuden hallinnan,
+              palvelukohtaiset säännöt ja käyttöliittymän, joka seuraa samaa
+              päätösmallia kuin taustalla oleva järjestelmä.
+            </p>
+            <p>
+              Case mallintaa ajanvarauksen ongelmaa silloin, kun palveluiden
+              ehdot, kesto, resurssit ja poikkeukset eivät mahdu yhteen
+              yksinkertaiseen kalenterinäkymään.
             </p>
             <p class="meta">Saatavuus, sessiot, päätössäännöt</p>
-          </article>
-
-          <article class="case-block">
-            <img
-              src="images/myyntiagentti.png"
-              alt="Myyntiagentin näkymä"
-              class="case-image"
-            />
-            <h3>Myyntiagentti</h3>
-            <p>
-              Työkalu, joka tukee myyntityötä kokoamalla yhteen havaintoja,
-              yhteydenottoja ja seuraavia toimenpiteitä. Tarkoitus ei ole
-              automatisoida suhdetta, vaan tehdä eteneminen näkyväksi ja
-              hallituksi.
-            </p>
-            <p class="meta">Prosessi, seuranta, työvirta</p>
-          </article>
-
-          <article class="case-block">
-            <img
-              src="images/verkkosivut.png"
-              alt="Verkkosivutoteutuksen näkymä"
-              class="case-image"
-            />
-            <h3>Verkkosivut</h3>
-            <p>
-              Sisältölähtöisiä verkkosivuja, joissa rakenne, kieli ja tekninen
-              toteutus tukevat samaa tarkoitusta. Pienikin sivusto voi olla
-              tarkasti rakennettu järjestelmä, ei vain irrallinen julkisivu.
-            </p>
-            <p class="meta">Sisältörakenne, julkaisu, ylläpidettävyys</p>
           </article>
 
           <article class="case-block">
@@ -116,26 +127,89 @@
             />
             <h3>Tulkintatila-havainnointityökalu</h3>
             <p>
-              Havaintojen kirjaamiseen, jäsentämiseen ja tulkinnan tueksi tehty
-              työkalu, jossa olennaista on selkeä suhde merkintöjen,
-              luokittelun ja myöhemmän käytön välillä.
+              Havaintojen kirjaamiseen, jäsentämiseen ja myöhempää tulkintaa
+              varten rakennettu työkalu.
+            </p>
+            <p>
+              Rakennettu osa yhdistää merkinnät, luokittelun, haun ja
+              dokumentaation niin, että havaintoa voidaan käsitellä sekä
+              yksittäisenä merkintänä että osana laajempaa aineistoa.
+            </p>
+            <p>
+              Case ratkaisee ongelmaa, jossa havaintoaineisto kertyy nopeasti,
+              mutta sen rakenne ja myöhempi käytettävyys hajoavat ilman
+              selkeää merkintälogiikkaa.
             </p>
             <p class="meta">Havainnot, luokittelu, dokumentaatio</p>
           </article>
 
           <article class="case-block">
             <img
-              src="images/ai-arkkitehtuuri.png"
-              alt="AI-arkkitehtuurin ja työnkulkujen näkymä"
+              src="images/verkkosivustot.png"
+              alt="Verkkosivustototeutusten näkymä"
               class="case-image"
             />
-            <h3>AI-arkkitehtuuri ja työnkulut</h3>
+            <h3>Verkkosivustot</h3>
             <p>
-              Vaiheistettuja työnkulkuja, joissa AI toimii osana tuotannollista
-              järjestelmää selkeästi rajatuissa rooleissa. Olennaista on erottaa
-              kirjoittaminen, arviointi, tarkistus ja orkestrointi toisistaan.
+              Sisältölähtöisiä verkkosivustoja, joissa rakenne, kieli ja
+              tekninen toteutus muodostavat saman dokumentoidun kokonaisuuden.
             </p>
-            <p class="meta">Roolitus, orkestrointi, arviointiketju</p>
+            <p>
+              Rakennettu osa kattaa sivurakenteen, sisällön jäsennyksen,
+              julkaisun teknisen toteutuksen ja ylläpidettävyyden niin, että
+              sivusto toimii myös pitkän aikavälin rakenteena.
+            </p>
+            <p>
+              Case mallintaa tilannetta, jossa verkkosivu ei ole pelkkä
+              esittelypinta, vaan rajattu ja tarkoituksenmukainen järjestelmä
+              sisällölle, julkaisemiselle ja muutoksille.
+            </p>
+            <p class="meta">Sisältörakenne, julkaisu, ylläpidettävyys</p>
+          </article>
+
+          <div class="example-card">
+            <p><strong>Tekstimuotoiset caset</strong></p>
+            <p>
+              Kaikki työ ei asetu kuviksi. Osa toteutuksista on luonteeltaan
+              prosesseja, päätösketjuja tai rakenteita, joita on tässä
+              tarkoituksenmukaisempaa kuvata tekstinä.
+            </p>
+          </div>
+
+          <article class="theme-block">
+            <h3>AI-työnkulut</h3>
+            <p>
+              Vaiheistettuja työnkulkuja, joissa AI toimii rajatuissa rooleissa
+              osana tuotannollista järjestelmää.
+            </p>
+            <p>
+              Rakennettu osa sisältää roolituksen, orkestroinnin, tarkistuksen
+              ja arviointivaiheiden erottelun niin, että kirjoittaminen,
+              luokittelu ja valvonta eivät sekoitu samaan kerrokseen.
+            </p>
+            <p>
+              Case mallintaa ongelmaa, jossa AI:n käyttö muuttuu hallittavaksi
+              vasta, kun vaiheet, vastuut ja hyväksymisehdot tehdään
+              eksplisiittisiksi.
+            </p>
+          </article>
+
+          <article class="theme-block">
+            <h3>Myyntiagentti</h3>
+            <p>
+              Työkalu asiakkuuksien, havaintojen ja seuraavien toimenpiteiden
+              jäsentämiseen ilman irrallista CRM-ylikerrosta.
+            </p>
+            <p>
+              Rakennettu osa kokoaa yhteydenotot, tilannetiedon, tehtävät ja
+              etenemisen samaan näkymään niin, että prosessi pysyy seurattavana
+              ja dokumentoituna.
+            </p>
+            <p>
+              Case ratkaisee ongelmaa, jossa myyntityön jatkuvuus katkeaa, jos
+              havainnot, seuraavat vaiheet ja päätösperusteet jäävät eri
+              paikkoihin.
+            </p>
           </article>
         </section>
 
