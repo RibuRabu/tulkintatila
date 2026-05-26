@@ -323,6 +323,111 @@ a   { color:inherit; text-decoration:none; }
 }
 .section-desc--light { color: rgba(255,255,255,0.5); }
 
+/* ── FIKSIRIBU FEATURED ──────────────────── */
+.fiksiribu-card {
+  background: var(--bg-dark);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  margin-bottom: 24px;
+  position: relative;
+}
+.fiksiribu-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-mid), var(--highlight), transparent);
+}
+.fiksiribu-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  padding: 40px 44px 36px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  align-items: center;
+}
+.fiksiribu-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--highlight);
+  background: rgba(184,212,192,0.12);
+  padding: 4px 12px;
+  border-radius: 100px;
+  margin-bottom: 18px;
+}
+.fiksiribu-h3 {
+  font-family: var(--font-d);
+  font-size: clamp(22px, 2.5vw, 32px);
+  font-weight: 400;
+  color: rgba(255,255,255,0.9);
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+.fiksiribu-body {
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.72;
+}
+.fiksiribu-quote {
+  border-left: 3px solid var(--accent-mid);
+  padding-left: 24px;
+}
+.fiksiribu-quote p {
+  font-family: var(--font-d);
+  font-size: clamp(17px, 2vw, 23px);
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.65);
+}
+.arch-table { width: 100%; }
+.arch-head {
+  display: grid;
+  grid-template-columns: 60px 200px 130px 1fr;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  background: rgba(255,255,255,0.03);
+}
+.arch-head-cell {
+  padding: 12px 20px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  border-right: 1px solid rgba(255,255,255,0.06);
+}
+.arch-head-cell:last-child { border-right: none; }
+.arch-row {
+  display: grid;
+  grid-template-columns: 60px 200px 130px 1fr;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  transition: background 0.18s;
+}
+.arch-row:last-child { border-bottom: none; }
+.arch-row:hover { background: rgba(255,255,255,0.03); }
+.arch-cell {
+  padding: 20px 20px;
+  border-right: 1px solid rgba(255,255,255,0.06);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+.arch-cell:last-child { border-right: none; }
+.arch-num {
+  font-family: var(--font-d);
+  font-size: 28px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.1);
+  justify-content: center;
+}
+.arch-name-col { font-weight: 500; color: rgba(255,255,255,0.85); }
+.arch-tool-col { color: var(--highlight); font-weight: 400; }
+.arch-desc-col { color: rgba(255,255,255,0.45); font-weight: 300; line-height: 1.6; }
+
 /* ── CASE GRID ───────────────────────────── */
 .case-grid {
   display: grid;
@@ -616,6 +721,13 @@ a   { color:inherit; text-decoration:none; }
     gap: 40px;
     padding: 36px 36px;
   }
+  .fiksiribu-top {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 32px 32px 28px;
+  }
+  .arch-head { grid-template-columns: 48px 160px 110px 1fr; }
+  .arch-row  { grid-template-columns: 48px 160px 110px 1fr; }
   .footer-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
 }
 
@@ -652,6 +764,11 @@ a   { color:inherit; text-decoration:none; }
   .about-box { padding: 28px 24px; }
   .cta-section { padding: 80px 0 96px; }
   .footer-nav { flex-wrap: wrap; gap: 16px; }
+  .fiksiribu-top { padding: 24px 20px 20px; }
+  .arch-head,
+  .arch-row { grid-template-columns: 40px 1fr 1fr; }
+  .arch-head-cell:nth-child(3),
+  .arch-cell:nth-child(3) { display: none; }
 }
   </style>
 
@@ -676,6 +793,7 @@ a   { color:inherit; text-decoration:none; }
       <span></span><span></span><span></span>
     </button>
     <div class="nav-links">
+      <a href="#fiksiribu" class="nav-link">Fiksiribu</a>
       <a href="#caset" class="nav-link">Caset</a>
       <a href="#teemat" class="nav-link">Teemat</a>
       <a href="#mista-on-kyse" class="nav-link">Mistä on kyse</a>
@@ -700,22 +818,22 @@ a   { color:inherit; text-decoration:none; }
           rajaukset ja päätöslogiikka tehdään näkyviksi.
         </p>
         <div class="hero-actions">
-          <a href="#caset" class="btn btn--primary">Katso caset</a>
-          <a href="mailto:hello@tulkintatila.fi" class="btn btn--ghost">Ota yhteyttä</a>
+          <a href="#fiksiribu" class="btn btn--primary">Fiksiribu-arkkitehtuuri</a>
+          <a href="#caset" class="btn btn--ghost">Kaikki caset</a>
         </div>
       </div>
       <div class="hero-aside">
         <div class="hero-statement">
-          <p>"Rakenne, rajaukset, käyttötilanteet ja päätöslogiikka — ei pelkkä lopputulos."</p>
+          <p>"Et myy tekoälyä. Myyt rauhaa siitä, että tekoäly on hallinnassa."</p>
         </div>
         <div class="hero-stats">
           <div>
-            <span class="hero-stat-n">5</span>
+            <span class="hero-stat-n">6</span>
             <span class="hero-stat-l">kuvattua casea</span>
           </div>
           <div>
-            <span class="hero-stat-n">2</span>
-            <span class="hero-stat-l">teksticasea</span>
+            <span class="hero-stat-n">4</span>
+            <span class="hero-stat-l">AI-arkkitehtuuria</span>
           </div>
           <div>
             <span class="hero-stat-n">6</span>
@@ -725,8 +843,67 @@ a   { color:inherit; text-decoration:none; }
       </div>
     </header>
 
+    <!-- FIKSIRIBU -->
+    <section class="section" id="fiksiribu">
+      <div class="container">
+        <div class="section-intro">
+          <div class="section-label">
+            <span class="section-n">00</span>
+            <span>Nostettu case</span>
+          </div>
+          <h2 class="section-h2">Fiksiribu — nelikerroksinen AI-arkkitehtuuri</h2>
+          <p class="section-desc">Esimerkki siitä, miten AI saadaan hallintaan — ei black boxina, vaan selkeänä nelikerrosrakenteena, jossa jokainen taso tekee vain yhden asian.</p>
+        </div>
+
+        <div class="fiksiribu-card">
+          <div class="fiksiribu-top">
+            <div>
+              <span class="fiksiribu-badge">Case · AI-arkkitehtuuri</span>
+              <h3 class="fiksiribu-h3">Päätöslogiikka näkyväksi — kerros kerrallaan</h3>
+              <p class="fiksiribu-body">Fiksiribu on AI-pohjainen palvelu, jonka arkkitehtuuri rakennettiin neljälle selkeälle kerrokselle. Tulkinta, prosessi, tieto ja toiminta pidetään erillään — tässä kohtaa tekoäly muuttuu hallittavaksi järjestelmäksi eikä jää mustaksi laatikoksi.</p>
+            </div>
+            <div class="fiksiribu-quote">
+              <p>"Et myy tekoälyä. Myyt rauhaa siitä, että tekoäly on hallinnassa."</p>
+            </div>
+          </div>
+          <div class="arch-table">
+            <div class="arch-head">
+              <div class="arch-head-cell">Kerros</div>
+              <div class="arch-head-cell">Nimi</div>
+              <div class="arch-head-cell">Työkalu</div>
+              <div class="arch-head-cell">Tehtävä</div>
+            </div>
+            <div class="arch-row">
+              <div class="arch-cell arch-num">1</div>
+              <div class="arch-cell arch-name-col">Tulkintakerros</div>
+              <div class="arch-cell arch-tool-col">Claude</div>
+              <div class="arch-cell arch-desc-col">Tilanteen ymmärtäminen ja kysymysten muotoilu — tekoäly toimii tulkkina, ei päättäjänä.</div>
+            </div>
+            <div class="arch-row">
+              <div class="arch-cell arch-num">2</div>
+              <div class="arch-cell arch-name-col">Prosessikerros</div>
+              <div class="arch-cell arch-tool-col">Työnkulku</div>
+              <div class="arch-cell arch-desc-col">Työnkulun ohjaus ja päätöspisteet — tässä kerroksessa päätetään, mitä tapahtuu seuraavaksi.</div>
+            </div>
+            <div class="arch-row">
+              <div class="arch-cell arch-num">3</div>
+              <div class="arch-cell arch-name-col">Tietokerros</div>
+              <div class="arch-cell arch-tool-col">Konteksti</div>
+              <div class="arch-cell arch-desc-col">Historiatiedot, asiakasdata ja konteksti — AI saa vain sen tiedon, mitä se tarvitsee kulloinkin.</div>
+            </div>
+            <div class="arch-row">
+              <div class="arch-cell arch-num">4</div>
+              <div class="arch-cell arch-name-col">Toimintakerros</div>
+              <div class="arch-cell arch-tool-col">Toteutus</div>
+              <div class="arch-cell arch-desc-col">Konkreettiset toimenpiteet, viestit ja kirjaukset — vasta tässä kerroksessa tapahtuu jotain oikeasti.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- CASET -->
-    <section class="section" id="caset">
+    <section class="section section--alt" id="caset">
       <div class="container">
         <div class="section-intro">
           <div class="section-label">
@@ -840,7 +1017,7 @@ a   { color:inherit; text-decoration:none; }
     </section>
 
     <!-- MISTÄ ON KYSE -->
-    <section class="section section--alt" id="mista-on-kyse">
+    <section class="section" id="mista-on-kyse">
       <div class="container">
         <div class="section-intro">
           <div class="section-label">
@@ -863,7 +1040,7 @@ a   { color:inherit; text-decoration:none; }
     </section>
 
     <!-- TEEMAT -->
-    <section class="section" id="teemat">
+    <section class="section section--alt" id="teemat">
       <div class="container">
         <div class="section-intro">
           <div class="section-label">
@@ -907,7 +1084,7 @@ a   { color:inherit; text-decoration:none; }
       <div class="container">
         <div class="cta-inner">
           <h2 class="cta-h2">Tarvitsetko oman ratkaisun?</h2>
-          <p class="cta-body">Jos valmiit työkalut eivät sovi työn rakenteeseen, niiden väliin on mahdollista rakentaa pienempi, selkeämpi ja tarkoitukseen tehty ratkaisu.</p>
+          <p class="cta-body">Jos valmiit työkalut eivät sovi työn rakenteeseen, niiden väliin on mahdollista rakentaa pienempi, selkeämpi ja tarkoitukseen tehty ratkaisu. Yksi ihminen, suora yhteys rakentajaan.</p>
           <a href="mailto:hello@tulkintatila.fi" class="btn btn--primary btn--lg">hello@tulkintatila.fi</a>
         </div>
       </div>
@@ -921,6 +1098,7 @@ a   { color:inherit; text-decoration:none; }
         Tulkintatila <span>Lab</span>
       </div>
       <nav class="footer-nav">
+        <a href="#fiksiribu">Fiksiribu</a>
         <a href="#caset">Caset</a>
         <a href="#teemat">Teemat</a>
         <a href="mailto:hello@tulkintatila.fi">hello@tulkintatila.fi</a>
