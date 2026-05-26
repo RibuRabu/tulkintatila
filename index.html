@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="fi">
 <head>
   <meta charset="utf-8">
@@ -392,37 +392,43 @@ a   { color:inherit; text-decoration:none; }
   line-height: 1.5;
   color: rgba(255,255,255,0.65);
 }
-.arch-table { width: 100%; }
+.arch-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
 .arch-head {
   display: grid;
-  grid-template-columns: 60px 200px 130px 1fr;
+  grid-template-columns: 72px 1fr 140px 2fr;
+  min-width: 540px;
   border-bottom: 1px solid rgba(255,255,255,0.07);
   background: rgba(255,255,255,0.03);
 }
 .arch-head-cell {
-  padding: 12px 20px;
+  padding: 12px 16px;
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.3);
   border-right: 1px solid rgba(255,255,255,0.06);
+  overflow: hidden;
+  white-space: nowrap;
 }
+.arch-head-cell:first-child { text-align: center; padding-left: 8px; padding-right: 8px; }
 .arch-head-cell:last-child { border-right: none; }
 .arch-row {
   display: grid;
-  grid-template-columns: 60px 200px 130px 1fr;
+  grid-template-columns: 72px 1fr 140px 2fr;
+  min-width: 540px;
   border-bottom: 1px solid rgba(255,255,255,0.06);
   transition: background 0.18s;
 }
 .arch-row:last-child { border-bottom: none; }
 .arch-row:hover { background: rgba(255,255,255,0.03); }
 .arch-cell {
-  padding: 20px 20px;
+  padding: 18px 16px;
   border-right: 1px solid rgba(255,255,255,0.06);
   font-size: 14px;
   display: flex;
   align-items: center;
+  min-width: 0;
 }
 .arch-cell:last-child { border-right: none; }
 .arch-num {
@@ -861,7 +867,7 @@ a   { color:inherit; text-decoration:none; }
       </div>
       <div class="hero-aside">
         <div class="hero-statement">
-          <p>"Et myy tekoälyä. Myyt rauhaa siitä, että tekoäly on hallinnassa."</p>
+          <p>"En myy tekoälyä. Myyn rauhaa siitä, että tekoäly on hallinnassa."</p>
         </div>
         <div class="hero-stats">
           <div>
@@ -990,7 +996,7 @@ a   { color:inherit; text-decoration:none; }
             <div class="case-body">
               <p class="case-meta">Järjestelmäarkkitehtuuri</p>
               <h3 class="case-h3">Liminall Node</h3>
-              <p class="case-desc">Solmukohtiin perustuva järjestelmämalli, jossa sisältö, tilat ja siirtymät kuvataan erillisinä mutta toisiinsa sidottuina yksikköinä. Logiikka pysyy luettavana ilman raskasta käyttöliittymäkerrosta.</p>
+              <p class="case-desc">Sisältö kasvaa, tilat lisääntyvät — miten pidetään logiikka luettavana ilman, että järjestelmä muuttuu mustaksi laatikoksi? Rakennettu solmukohtimalli, jossa jokainen tila ja siirtymä on itsenäinen mutta sidottu kokonaisuuteen. Rakenne on luettavissa suoraan.</p>
               <div class="case-tags">
                 <span class="case-tag">Rakenne</span>
                 <span class="case-tag">Tilamalli</span>
@@ -1006,7 +1012,7 @@ a   { color:inherit; text-decoration:none; }
             <div class="case-body">
               <p class="case-meta">Fyysinen + digitaalinen</p>
               <h3 class="case-h3">NFC-kirja</h3>
-              <p class="case-desc">Fyysisen objektin ja digitaalisen sisällön väliin rakennettu julkaisu- ja tunnistusratkaisu. Fyysinen kosketus laukaisee oikean digitaalisen näkymän ilman erillistä sovelluspolkua.</p>
+              <p class="case-desc">Fyysinen julkaisu halusi yhdistyä digitaaliseen sisältöön — ilman QR-koodia, kirjautumista tai sovelluksen lataamista. NFC-tunniste fyysisessä kohteessa laukaisee oikean näkymän suoraan puhelimessa. Fyysinen kosketus riittää.</p>
               <div class="case-tags">
                 <span class="case-tag">NFC</span>
                 <span class="case-tag">Sisällönohjaus</span>
@@ -1022,7 +1028,7 @@ a   { color:inherit; text-decoration:none; }
             <div class="case-body">
               <p class="case-meta">Prosessi &amp; varauslogiikka</p>
               <h3 class="case-h3">Ajanvarausjärjestelmä</h3>
-              <p class="case-desc">Saatavuus, palvelut, vaiheet ja varauksen ehdot luetaan samasta rakenteesta. Käyttöliittymä seuraa samaa päätösmallia kuin taustalla oleva järjestelmä.</p>
+              <p class="case-desc">Saatavuus, palvelut ja varausehdot olivat eri paikoissa — käyttöliittymä ei kertonut, miksi tietty aika ei ollut saatavilla. Kaikki logiikka yhdistettiin yhteen rakenteeseen: UI seuraa nyt samaa päätösmallia kuin taustajärjestelmä.</p>
               <div class="case-tags">
                 <span class="case-tag">Saatavuus</span>
                 <span class="case-tag">Sessiot</span>
@@ -1038,7 +1044,7 @@ a   { color:inherit; text-decoration:none; }
             <div class="case-body">
               <p class="case-meta">AI + dokumentointi</p>
               <h3 class="case-h3">Havainnointityökalu</h3>
-              <p class="case-desc">Havaintojen kirjaamiseen, jäsentämiseen ja myöhempää tulkintaa varten rakennettu työkalu. Merkinnät, luokittelu, haku ja dokumentaatio samassa rakenteessa.</p>
+              <p class="case-desc">Havainnot kirjattiin eri paikkoihin — muistiinpanoihin, viesteihin, lomakkeisiin. Myöhemmin niitä oli vaikea löytää tai yhdistää. Rakennettu työkalu, jossa merkinnät, luokittelu ja haku ovat samassa paikassa. Tieto on käytettävissä myöhemmin.</p>
               <div class="case-tags">
                 <span class="case-tag">Havainnot</span>
                 <span class="case-tag">Luokittelu</span>
@@ -1054,7 +1060,7 @@ a   { color:inherit; text-decoration:none; }
             <div class="case-body">
               <p class="case-meta">Sisältöarkkitehtuuri</p>
               <h3 class="case-h3">Verkkosivustot</h3>
-              <p class="case-desc">Sisältölähtöisiä verkkosivustoja, joissa rakenne, kieli ja tekninen toteutus muodostavat saman dokumentoidun kokonaisuuden. Sivusto toimii pitkän aikavälin rakenteena, ei pelkkänä esittelypintana.</p>
+              <p class="case-desc">Sivusto esitteli — mutta ei kantanut sitä ajattelua, joka tekee palvelusta uskottavan. Rakennettu sivustoja, joissa sisältö, kieli ja tekninen toteutus suunnitellaan yhdessä. Sivusto ei ole pelkkä ulkoasu — se on pitkän aikavälin rakenne.</p>
               <div class="case-tags">
                 <span class="case-tag">Sisältörakenne</span>
                 <span class="case-tag">Julkaisu</span>
@@ -1186,3 +1192,4 @@ a   { color:inherit; text-decoration:none; }
 
 </body>
 </html>
+
