@@ -888,52 +888,83 @@ a   { color:inherit; text-decoration:none; }
             <span class="section-n">00</span>
             <span>Nostettu case</span>
           </div>
-          <h2 class="section-h2">Fiksiribu — nelikerroksinen AI-arkkitehtuuri</h2>
-          <p class="section-desc">Esimerkki siitä, miten AI saadaan hallintaan — ei black boxina, vaan selkeänä nelikerrosrakenteena, jossa jokainen taso tekee vain yhden asian.</p>
+          <h2 class="section-h2">Fiksiribu — vastuullinen AI pienyrityksen kontekstissa</h2>
+          <p class="section-desc">Asiantuntijavetoisen pienyrityksen AI-arkkitehtuuri, jossa nelikerroksinen rakenne on ennen kaikkea vastuukysymys — ei tekninen ratkaisu.</p>
         </div>
 
         <div class="fiksiribu-card">
           <div class="fiksiribu-top">
             <div>
               <span class="fiksiribu-badge">Case · AI-arkkitehtuuri</span>
-              <h3 class="fiksiribu-h3">Päätöslogiikka näkyväksi — kerros kerrallaan</h3>
-              <p class="fiksiribu-body">Fiksiribu on AI-pohjainen palvelu, jonka arkkitehtuuri rakennettiin neljälle selkeälle kerrokselle. Tulkinta, prosessi, tieto ja toiminta pidetään erillään — tässä kohtaa tekoäly muuttuu hallittavaksi järjestelmäksi eikä jää mustaksi laatikoksi.</p>
+              <h3 class="fiksiribu-h3">Tekoäly kognitiivisena tukena, ei toimijana</h3>
+              <p class="fiksiribu-body">Fiksiribu on asiantuntijavetoinen pienyritys, jonka toiminta perustuu keholliseen ja kokemukselliseen ymmärrykseen — ei standardoituihin prosesseihin. Tietoa syntyy muistiinpanoista, havainnoista, viesteistä ja asiakastyöstä ilman yhteistä rakennetta. Yritystä pyörittää yksi henkilö ilman erillistä IT-tiimiä.</p>
+              <p class="fiksiribu-body" style="margin-top:10px;">Tästä syntyi selkeä vaatimus: tekoäly ei voi tehdä päätöksiä, vain tukea tulkintaa. Järjestelmän on oltava kevyt ja täysin yhden henkilön hallittavissa — ja selitettävissä asiakkaalle.</p>
             </div>
             <div class="fiksiribu-quote">
-              <p>"Et myy tekoälyä. Myyt rauhaa siitä, että tekoäly on hallinnassa."</p>
+              <p>"Nelikerroksinen malli ei ole tekninen pakko, vaan vastuukysymys."</p>
             </div>
           </div>
           <div class="arch-table">
             <div class="arch-head">
               <div class="arch-head-cell">Kerros</div>
               <div class="arch-head-cell">Nimi</div>
-              <div class="arch-head-cell">Työkalu</div>
+              <div class="arch-head-cell">Rooli</div>
               <div class="arch-head-cell">Tehtävä</div>
             </div>
             <div class="arch-row">
               <div class="arch-cell arch-num">1</div>
-              <div class="arch-cell arch-name-col">Tulkintakerros</div>
-              <div class="arch-cell arch-tool-col">Claude</div>
-              <div class="arch-cell arch-desc-col">Tilanteen ymmärtäminen ja kysymysten muotoilu — tekoäly toimii tulkkina, ei päättäjänä.</div>
+              <div class="arch-cell arch-name-col">Tietolähdekerros</div>
+              <div class="arch-cell arch-tool-col">Muistiinpanot, dokumentit, viestit</div>
+              <div class="arch-cell arch-desc-col">Tieto kerätään useista lähteistä ilman pakotettua rakennetta. Konteksti ja alkuperäinen muoto säilytetään — ennenaikainen abstrahointi aiheuttaa merkityskatoa.</div>
             </div>
             <div class="arch-row">
               <div class="arch-cell arch-num">2</div>
-              <div class="arch-cell arch-name-col">Prosessikerros</div>
-              <div class="arch-cell arch-tool-col">Työnkulku</div>
-              <div class="arch-cell arch-desc-col">Työnkulun ohjaus ja päätöspisteet — tässä kerroksessa päätetään, mitä tapahtuu seuraavaksi.</div>
+              <div class="arch-cell arch-name-col">Esikäsittely</div>
+              <div class="arch-cell arch-tool-col">Kevyt rajaus ja siivous</div>
+              <div class="arch-cell arch-desc-col">Poistetaan ilmeinen kohina, säilytetään merkitys. Ei täydellisyyttä, ei raskasta normalisointia — riittävä laatu tulkintaa varten.</div>
             </div>
             <div class="arch-row">
               <div class="arch-cell arch-num">3</div>
-              <div class="arch-cell arch-name-col">Tietokerros</div>
-              <div class="arch-cell arch-tool-col">Konteksti</div>
-              <div class="arch-cell arch-desc-col">Historiatiedot, asiakasdata ja konteksti — AI saa vain sen tiedon, mitä se tarvitsee kulloinkin.</div>
+              <div class="arch-cell arch-name-col">Tulkintakerros</div>
+              <div class="arch-cell arch-tool-col">Claude / tekoäly</div>
+              <div class="arch-cell arch-desc-col">Tekoäly jäsentää, tunnistaa teemoja ja ehdottaa yhteyksiä. Kaikki tuotokset ovat ehdotuksia — AI ei kirjoita totuuksia eikä tee päätöksiä. AI:n tuotos on aina hypoteesi.</div>
             </div>
             <div class="arch-row">
               <div class="arch-cell arch-num">4</div>
-              <div class="arch-cell arch-name-col">Toimintakerros</div>
-              <div class="arch-cell arch-tool-col">Toteutus</div>
-              <div class="arch-cell arch-desc-col">Konkreettiset toimenpiteet, viestit ja kirjaukset — vasta tässä kerroksessa tapahtuu jotain oikeasti.</div>
+              <div class="arch-cell arch-name-col">Ihmisen ohjaus</div>
+              <div class="arch-cell arch-tool-col">Arviointi ja päätös</div>
+              <div class="arch-cell arch-desc-col">Ihminen hyväksyy, hylkää tai muokkaa tekoälyn ehdotukset. Vastuu ei hämärry. Tämä on arkkitehtuurin tärkein kerros.</div>
             </div>
+          </div>
+        </div>
+
+        <div style="margin-top:28px;">
+          <p style="font-size:11px;font-weight:600;letter-spacing:0.11em;text-transform:uppercase;color:var(--text-muted);margin-bottom:18px;">Keskeiset suunnittelupäätökset</p>
+          <div class="theme-grid">
+            <article class="theme-card">
+              <h3 class="theme-card-h3">Tekoäly ei tee päätöksiä</h3>
+              <p>Päätösvastuu säilyy ihmisellä. Väärintulkinnat ja eettiset riskit minimoidaan pitämällä ihminen arviointiketjussa.</p>
+            </article>
+            <article class="theme-card">
+              <h3 class="theme-card-h3">Ei jatkuvaa automaatiota</h3>
+              <p>Järjestelmää käytetään tietoisesti ja tilanteen mukaan — ei taustalla jatkuvasti. Hitaus oikeissa kohdissa suojaa yliluottamukselta.</p>
+            </article>
+            <article class="theme-card">
+              <h3 class="theme-card-h3">Kevyt arkkitehtuuri</h3>
+              <p>Ei erillistä data-alustaa tai monimutkaista integraatiokerrosta. Kaikki on yhden henkilön ylläpidettävissä.</p>
+            </article>
+            <article class="theme-card">
+              <h3 class="theme-card-h3">Rakenne vasta tulkinnassa</h3>
+              <p>Tietoa ei pakoteta jäykkään muotoon ennen kuin käyttötarkoitus on selvä. Ennenaikainen rakenteistaminen tuhoaa merkityksen.</p>
+            </article>
+            <article class="theme-card">
+              <h3 class="theme-card-h3">Ymmärrettävyys edellä</h3>
+              <p>"Jos järjestelmää ei voi selittää asiakkaalle, sitä ei käytetä." Tekninen hienostuneisuus ei ole tavoite.</p>
+            </article>
+            <article class="theme-card">
+              <h3 class="theme-card-h3">Tietoiset rajaukset</h3>
+              <p>Kaikkea mahdollista ei rakenneta. Rajaaminen on suunnittelua, ei puute — jokainen päätös tehty ylläpidettävyyden ehdoilla.</p>
+            </article>
           </div>
         </div>
       </div>
