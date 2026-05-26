@@ -536,6 +536,18 @@ a   { color:inherit; text-decoration:none; }
   border-radius: 100px;
   letter-spacing: 0.02em;
 }
+.case-link {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--accent-mid);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--border-mid);
+  transition: color 0.2s, text-decoration-color 0.2s;
+}
+.case-link:hover { color: var(--accent); text-decoration-color: var(--accent); }
 
 /* ── TEXT CASES ──────────────────────────── */
 .text-cases {
@@ -1043,17 +1055,18 @@ a   { color:inherit; text-decoration:none; }
 
           <article class="case-card">
             <div class="case-img-wrap">
-              <img src="images/nfc-kirja.png" alt="NFC-kirja: fyysinen julkaisu yhdistyy digitaaliseen sisältöön NFC-tunnisteella — ei QR-koodia, ei sovellusta">
+              <img src="images/nfc-kirja.png" alt="Rauhoita hermostosi: fyysinen NFC-opus yhdistyy digitaaliseen sisältöön — kosketus laukaisee näkymän suoraan puhelimessa">
             </div>
             <div class="case-body">
               <p class="case-meta">Fyysinen + digitaalinen</p>
-              <h3 class="case-h3">NFC-kirja</h3>
-              <p class="case-desc">Fyysinen julkaisu halusi yhdistyä digitaaliseen sisältöön — ilman QR-koodia, kirjautumista tai sovelluksen lataamista. NFC-tunniste fyysisessä kohteessa laukaisee oikean näkymän suoraan puhelimessa. Fyysinen kosketus riittää.</p>
+              <h3 class="case-h3">Rauhoita hermostosi</h3>
+              <p class="case-desc">Fyysinen opus halusi yhdistyä digitaaliseen sisältöön — ilman QR-koodia, kirjautumista tai sovelluksen lataamista. NFC-tunniste fyysisessä kohteessa laukaisee oikean näkymän suoraan puhelimessa. Fyysinen kosketus riittää.</p>
               <div class="case-tags">
                 <span class="case-tag">NFC</span>
                 <span class="case-tag">Sisällönohjaus</span>
-                <span class="case-tag">Julkaisu</span>
+                <span class="case-tag">NFC-opus</span>
               </div>
+              <a href="https://rauhoitahermostosi.tulkintatila.fi/" target="_blank" rel="noopener" class="case-link">rauhoitahermostosi.tulkintatila.fi ↗</a>
             </div>
           </article>
 
