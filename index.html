@@ -1,317 +1,933 @@
 <!doctype html>
 <html lang="fi">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Tulkintatila Lab</title>
-    <meta
-      name="description"
-      content="Tulkintatilan labra- ja arkistosivu: verkkosivuja, kevyitä järjestelmiä, ajanvarausratkaisuja ja AI-avusteisia työnkulkuja."
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="page-shell">
-      <header class="hero">
-        <p class="eyebrow">lab.tulkintatila.fi</p>
-        <nav class="site-nav" aria-label="Päänavigaatio">
-          <a href="#caset">Caset</a>
-          <a href="#mista-on-kyse">Mistä on kyse</a>
-          <a href="#teemat">Teemat</a>
-          <a href="#yhteys">Yhteys</a>
-        </nav>
-        <h1>
-          Tulkintatila on labra- ja arkistotila järjestelmille,
-          arkkitehtuuripäätöksille ja dokumentoidulle tekniselle ajattelulle.
-        </h1>
-        <div class="example-card">
-          <p>
-            Tämä labra näyttää, miten ajattelu muuttuu toimiviksi digitaalisiksi
-            ratkaisuiksi: verkkosivuiksi, kevyiksi räätälöidyiksi järjestelmiksi,
-            ajanvaraustyökaluiksi ja AI-avusteisiksi työnkuluiksi.
-          </p>
-          <p>
-            Painopiste ei ole yleisessä esittelyssä vaan siinä, miten rakenne,
-            rajaukset, käyttötilanteet ja päätöslogiikka tehdään näkyviksi.
-          </p>
-        </div>
-      </header>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tulkintatila Lab — Käytännön rakenteet ja dokumentoitu päätöslogiikka</title>
+  <meta name="description" content="Tulkintatila Lab näyttää käytännön tason: verkkosivuja, kevyitä järjestelmiä, ajanvarausratkaisuja ja AI-avusteisia työnkulkuja — rakenne, rajaukset ja päätöslogiikka näkyvissä.">
+  <link rel="canonical" href="https://lab.tulkintatila.fi/">
+  <meta property="og:locale" content="fi_FI">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Tulkintatila Lab — Käytännön rakenteet ja dokumentoitu päätöslogiikka">
+  <meta property="og:description" content="Tulkintatila Lab näyttää, miten ajattelu muuttuu toimiviksi digitaalisiksi ratkaisuiksi.">
+  <meta property="og:url" content="https://lab.tulkintatila.fi/">
+  <meta property="og:site_name" content="Tulkintatila Lab">
 
-      <main>
-        <section id="caset" class="section">
-          <p class="eyebrow">01</p>
-          <h2>Valitut caset</h2>
-          <p>
-            Caset kuvaavat käytännön toteutuksia, joissa suunnittelu, sisältö,
-            järjestelmärakenne ja käyttölogiikka sidotaan samaan kokonaisuuteen.
-          </p>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
 
-          <article class="case-block">
-            <img
-              src="images/liminall-node.png"
-              alt="Liminall Node -järjestelmän näkymä"
-              class="case-image"
-            />
-            <h3>Liminall Node</h3>
-            <p>
-              Solmukohtiin perustuva järjestelmämalli, jossa sisältö, tilat ja
-              siirtymät kuvataan erillisinä mutta toisiinsa sidottuina
-              yksikköinä.
-            </p>
-            <p>
-              Rakennettu osa sisältää rakenteen mallinnuksen, tilanhallinnan ja
-              rajapintojen jäsentelyn niin, että logiikka pysyy luettavana ilman
-              raskasta käyttöliittymäkerrosta.
-            </p>
-            <p>
-              Case mallintaa tilannetta, jossa järjestelmä kasvaa haarautuvaksi
-              ja tarvitsee selkeän tavan kuvata riippuvuuksia, reittejä ja
-              päätöskohtia.
-            </p>
-            <p class="meta">Rakenne, tilamalli, rajapinnat</p>
-          </article>
+  <style>
+/* ============================================
+   TULKINTATILA LAB
+   Newsreader + DM Sans · Green editorial
+   ============================================ */
+:root {
+  --bg:         #eef3ef;
+  --bg-alt:     #f2f7f3;
+  --bg-dark:    #1e2a23;
+  --text:       #1e2a23;
+  --text-mid:   #2a3b31;
+  --text-muted: #6f8a78;
+  --accent:     #2f4739;
+  --accent-mid: #4a6b57;
+  --border:     #cad9ce;
+  --border-mid: #a8c0b0;
+  --card-bg:    #f0f6f1;
+  --highlight:  #b8d4c0;
+  --tag-bg:     #ddeee3;
+  --font-d: 'Newsreader', Georgia, serif;
+  --font-b: 'DM Sans', system-ui, -apple-system, sans-serif;
+  --nav-h:    64px;
+  --max-w:    1120px;
+  --r:        10px;
+  --r-lg:     18px;
+  --ease:     cubic-bezier(0.16, 1, 0.3, 1);
+}
 
-          <article class="case-block">
-            <img
-              src="images/nfc-kirja.png"
-              alt="NFC-kirjan näkymä"
-              class="case-image"
-            />
-            <h3>NFC-kirja</h3>
-            <p>
-              NFC-kirja on fyysisen objektin ja digitaalisen sisällön väliin
-              rakennettu julkaisu- ja tunnistusratkaisu.
-            </p>
-            <p>
-              Rakennettu osa kattaa NFC-pisteiden kytkennän sisältöön,
-              sisällön ohjauksen sekä julkaisumallin, jossa fyysinen kosketus
-              laukaisee oikean digitaalisen näkymän.
-            </p>
-            <p>
-              Case ratkaisee tilanteen, jossa painettu tai fyysinen formaatti
-              tarvitsee hallitun tavan avata kontekstisidonnaista tietoa ilman
-              erillistä sovelluspolkua.
-            </p>
-            <p class="meta">NFC, sisällönohjaus, julkaisu</p>
-          </article>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 
-          <article class="case-block">
-            <img
-              src="images/ajanvaraus.png"
-              alt="Ajanvarausjärjestelmän näkymä"
-              class="case-image"
-            />
-            <h3>Ajanvarausjärjestelmä</h3>
-            <p>
-              Ajanvarausjärjestelmä, jossa saatavuus, palvelut, vaiheet ja
-              varauksen ehdot luetaan samasta rakenteesta.
-            </p>
-            <p>
-              Rakennettu osa sisältää varauslogiikan, saatavuuden hallinnan,
-              palvelukohtaiset säännöt ja käyttöliittymän, joka seuraa samaa
-              päätösmallia kuin taustalla oleva järjestelmä.
-            </p>
-            <p>
-              Case mallintaa ajanvarauksen ongelmaa silloin, kun palveluiden
-              ehdot, kesto, resurssit ja poikkeukset eivät mahdu yhteen
-              yksinkertaiseen kalenterinäkymään.
-            </p>
-            <p class="meta">Saatavuus, sessiot, päätössäännöt</p>
-          </article>
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--nav-h) + 24px);
+}
 
-          <article class="case-block">
-            <img
-              src="images/havainnointityokalu.png"
-              alt="Tulkintatila-havainnointityökalun näkymä"
-              class="case-image"
-            />
-            <h3>Tulkintatila-havainnointityökalu</h3>
-            <p>
-              Havaintojen kirjaamiseen, jäsentämiseen ja myöhempää tulkintaa
-              varten rakennettu työkalu.
-            </p>
-            <p>
-              Rakennettu osa yhdistää merkinnät, luokittelun, haun ja
-              dokumentaation niin, että havaintoa voidaan käsitellä sekä
-              yksittäisenä merkintänä että osana laajempaa aineistoa.
-            </p>
-            <p>
-              Case ratkaisee ongelmaa, jossa havaintoaineisto kertyy nopeasti,
-              mutta sen rakenne ja myöhempi käytettävyys hajoavat ilman
-              selkeää merkintälogiikkaa.
-            </p>
-            <p class="meta">Havainnot, luokittelu, dokumentaatio</p>
-          </article>
+body {
+  font-family: var(--font-b);
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
 
-          <article class="case-block">
-            <img
-              src="images/verkkosivustot.png"
-              alt="Verkkosivustototeutusten näkymä"
-              class="case-image"
-            />
-            <h3>Verkkosivustot</h3>
-            <p>
-              Sisältölähtöisiä verkkosivustoja, joissa rakenne, kieli ja
-              tekninen toteutus muodostavat saman dokumentoidun kokonaisuuden.
-            </p>
-            <p>
-              Rakennettu osa kattaa sivurakenteen, sisällön jäsennyksen,
-              julkaisun teknisen toteutuksen ja ylläpidettävyyden niin, että
-              sivusto toimii myös pitkän aikavälin rakenteena.
-            </p>
-            <p>
-              Case mallintaa tilannetta, jossa verkkosivu ei ole pelkkä
-              esittelypinta, vaan rajattu ja tarkoituksenmukainen järjestelmä
-              sisällölle, julkaisemiselle ja muutoksille.
-            </p>
-            <p class="meta">Sisältörakenne, julkaisu, ylläpidettävyys</p>
-          </article>
+img { max-width:100%; height:auto; display:block; }
+a   { color:inherit; text-decoration:none; }
 
-          <div class="example-card">
-            <p><strong>Tekstimuotoiset caset</strong></p>
-            <p>
-              Kaikki työ ei asetu kuviksi. Osa toteutuksista on luonteeltaan
-              prosesseja, päätösketjuja tai rakenteita, joita on tässä
-              tarkoituksenmukaisempaa kuvata tekstinä.
-            </p>
-          </div>
+.container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 36px;
+}
 
-          <article class="theme-block">
-            <h3>AI-työnkulut</h3>
-            <p>
-              Vaiheistettuja työnkulkuja, joissa AI toimii rajatuissa rooleissa
-              osana tuotannollista järjestelmää.
-            </p>
-            <p>
-              Rakennettu osa sisältää roolituksen, orkestroinnin, tarkistuksen
-              ja arviointivaiheiden erottelun niin, että kirjoittaminen,
-              luokittelu ja valvonta eivät sekoitu samaan kerrokseen.
-            </p>
-            <p>
-              Case mallintaa ongelmaa, jossa AI:n käyttö muuttuu hallittavaksi
-              vasta, kun vaiheet, vastuut ja hyväksymisehdot tehdään
-              eksplisiittisiksi.
-            </p>
-          </article>
+/* ── NAV ─────────────────────────────────── */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--nav-h);
+  background: rgba(238,243,239,0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 36px;
+}
 
-          <article class="theme-block">
-            <h3>Myyntiagentti</h3>
-            <p>
-              Työkalu asiakkuuksien, havaintojen ja seuraavien toimenpiteiden
-              jäsentämiseen ilman irrallista CRM-ylikerrosta.
-            </p>
-            <p>
-              Rakennettu osa kokoaa yhteydenotot, tilannetiedon, tehtävät ja
-              etenemisen samaan näkymään niin, että prosessi pysyy seurattavana
-              ja dokumentoituna.
-            </p>
-            <p>
-              Case ratkaisee ongelmaa, jossa myyntityön jatkuvuus katkeaa, jos
-              havainnot, seuraavat vaiheet ja päätösperusteet jäävät eri
-              paikkoihin.
-            </p>
-          </article>
-        </section>
+.nav-brand {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.nav-brand-name {
+  font-family: var(--font-d);
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+.nav-brand-lab {
+  font-family: var(--font-b);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: var(--tag-bg);
+  padding: 2px 7px;
+  border-radius: 100px;
+}
 
-        <section id="mista-on-kyse" class="section">
-          <p class="eyebrow">02</p>
-          <h2>Mistä on kyse</h2>
-          <div class="example-card">
-            <p>
-              Tämä ei ole yleinen portfolio henkilölle tai palvelulistalle.
-              Tulkintatila toimii paikkana, jossa tehdään näkyväksi, miten
-              digitaaliset ratkaisut rakentuvat käytännössä.
-            </p>
-            <p>
-              Olennaista on, miten ratkaisu on rajattu, mitä sen pitää tehdä,
-              mihin kohtaan käyttöä logiikka sijoittuu ja millä perusteilla
-              rakenne on valittu. Lopputulos on tärkeä, mutta myös sen
-              perustelut kuuluvat näkyviin.
-            </p>
-          </div>
-        </section>
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.nav-link {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-mid);
+  transition: color 0.2s;
+}
+.nav-link:hover { color: var(--text); }
 
-        <section id="teemat" class="section">
-          <p class="eyebrow">03</p>
-          <h2>Arkkitehtuuriteemat</h2>
+.nav-back {
+  font-size: 13px;
+  color: var(--text-muted);
+  transition: color 0.2s;
+}
+.nav-back:hover { color: var(--text-mid); }
 
-          <article class="theme-block">
-            <h3>Järjestelmärajat</h3>
-            <p>
-              Missä käyttöliittymä loppuu, missä sovelluslogiikka alkaa ja mitä
-              ei pidä sekoittaa samaan kerrokseen.
-            </p>
-          </article>
+.nav-cta {
+  font-size: 13px;
+  font-weight: 500;
+  background: var(--accent);
+  color: #fff;
+  padding: 9px 20px;
+  border-radius: 100px;
+  transition: background 0.2s, transform 0.18s var(--ease), box-shadow 0.2s;
+}
+.nav-cta:hover {
+  background: var(--bg-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(30,42,35,0.22);
+}
 
-          <article class="theme-block">
-            <h3>Infrastruktuurin minimi</h3>
-            <p>
-              Mikä on pienin toimiva rakenne, jolla palvelu voidaan julkaista,
-              ylläpitää ja tehdä havaittavaksi ilman turhaa monimutkaisuutta.
-            </p>
-          </article>
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+}
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--text);
+  border-radius: 2px;
+}
 
-          <article class="theme-block">
-            <h3>Sessiot ja jatkuvuus</h3>
-            <p>
-              Miten käyttäjätila, varausvaiheet, luonnokset tai kesken jäänyt työ
-              säilyvät hallitusti järjestelmän eri vaiheissa.
-            </p>
-          </article>
+/* ── HERO ────────────────────────────────── */
+.hero {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 72px 36px 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: end;
+  animation: fadeUp 0.6s var(--ease) both;
+}
 
-          <article class="theme-block">
-            <h3>AI-roolit järjestelmässä</h3>
-            <p>
-              Milloin AI toimii kirjoittajana, arvioijana, luokittelijana tai
-              työparina, ja miten nämä roolit erotetaan toisistaan.
-            </p>
-          </article>
+.hero-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+.hero-h1 {
+  font-family: var(--font-d);
+  font-size: clamp(36px, 4.5vw, 60px);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--text);
+  margin-bottom: 24px;
+}
+.hero-h1 em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--accent);
+}
+.hero-body {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.72;
+  color: var(--text-mid);
+  margin-bottom: 32px;
+}
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
 
-          <article class="theme-block">
-            <h3>Päätöslogiikka</h3>
-            <p>
-              Millä ehdoilla järjestelmä hyväksyy, estää, siirtää tai priorisoi
-              toimintaa, ja miten nämä säännöt tehdään näkyviksi.
-            </p>
-          </article>
+.hero-aside {
+  padding-bottom: 6px;
+}
+.hero-statement {
+  border-left: 3px solid var(--accent-mid);
+  padding-left: 24px;
+}
+.hero-statement p {
+  font-family: var(--font-d);
+  font-size: clamp(16px, 1.8vw, 22px);
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.55;
+  color: var(--text-mid);
+  margin-bottom: 20px;
+}
+.hero-stats {
+  display: flex;
+  gap: 32px;
+  margin-top: 32px;
+}
+.hero-stat-n {
+  font-family: var(--font-d);
+  font-size: 36px;
+  font-weight: 400;
+  color: var(--accent);
+  line-height: 1;
+  display: block;
+  margin-bottom: 4px;
+}
+.hero-stat-l {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-muted);
+  letter-spacing: 0.03em;
+}
 
-          <article class="theme-block">
-            <h3>Dokumentoitu tulkinta</h3>
-            <p>
-              Pelkkä lopputulos ei riitä: myös perustelut, vaihtoehdot ja hylätyt
-              polut kuuluvat osaksi arkkitehtuuria.
-            </p>
-          </article>
-        </section>
+/* ── BUTTONS ─────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-b);
+  font-size: 15px;
+  font-weight: 500;
+  padding: 12px 26px;
+  border-radius: 100px;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s, transform 0.2s var(--ease), box-shadow 0.2s;
+}
+.btn--primary { background: var(--accent); color: #fff; }
+.btn--primary:hover {
+  background: var(--bg-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(30,42,35,0.24);
+}
+.btn--ghost {
+  background: transparent;
+  color: var(--text-mid);
+  border: 1px solid var(--border-mid);
+}
+.btn--ghost:hover {
+  background: var(--card-bg);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.btn--sm  { font-size: 13px; padding: 9px 20px; }
+.btn--lg  { font-size: 17px; padding: 16px 40px; }
 
-        <section id="yhteys" class="section">
-          <p class="eyebrow">04</p>
-          <h2>Tarvitsetko oman kevyen järjestelmän?</h2>
-          <div class="example-card">
-            <p>
-              Jos valmiit työkalut eivät sovi työn rakenteeseen, niiden väliin on
-              mahdollista rakentaa pienempi, selkeämpi ja tarkoitukseen tehty
-              ratkaisu. Se voi olla verkkosivu, ajanvarauksen osa, sisäinen
-              työkalu tai rajattu työnkulku.
-            </p>
-            <p>
-              Yhteys:
-              <a href="mailto:hello@tulkintatila.fi">hello@tulkintatila.fi</a>
-            </p>
-          </div>
-        </section>
-      </main>
+/* ── SECTION BASE ────────────────────────── */
+.section { padding: 88px 0; }
+.section--alt  { background: var(--bg-alt); }
+.section--dark { background: var(--bg-dark); color: #fff; }
 
-      <footer class="footer">
-        <p>Tulkintatila Lab</p>
-        <p>
-          Rakennetut järjestelmät, näkyvä päätöslogiikka ja dokumentoitu
-          tekninen ajattelu.
-        </p>
-        <p>
-          <a href="https://tulkintatila.fi/">Siirry pääsivulle: tulkintatila.fi</a>
-        </p>
-      </footer>
+.section-intro { max-width: 600px; margin-bottom: 48px; }
+
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+.section-label--light { color: rgba(255,255,255,0.4); }
+
+.section-n {
+  font-family: var(--font-d);
+  font-size: 12px;
+  opacity: 0.7;
+}
+.section-h2 {
+  font-family: var(--font-d);
+  font-size: clamp(26px, 3vw, 40px);
+  font-weight: 400;
+  line-height: 1.18;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+.section-h2--light { color: rgba(255,255,255,0.9); }
+.section-desc {
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--text-mid);
+  line-height: 1.7;
+}
+.section-desc--light { color: rgba(255,255,255,0.5); }
+
+/* ── CASE GRID ───────────────────────────── */
+.case-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.case-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  transition: transform 0.28s var(--ease), box-shadow 0.28s var(--ease), border-color 0.22s;
+  display: flex;
+  flex-direction: column;
+}
+.case-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(30,42,35,0.11);
+  border-color: var(--border-mid);
+}
+
+.case-img-wrap {
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  background: var(--bg-alt);
+  border-bottom: 1px solid var(--border);
+}
+.case-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s var(--ease);
+}
+.case-card:hover .case-img-wrap img {
+  transform: scale(1.03);
+}
+
+.case-body {
+  padding: 24px 26px 28px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.case-meta {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.case-h3 {
+  font-family: var(--font-d);
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.case-desc {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--text-mid);
+  flex: 1;
+}
+
+.case-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 18px;
+}
+.case-tag {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--accent-mid);
+  background: var(--tag-bg);
+  padding: 3px 10px;
+  border-radius: 100px;
+  letter-spacing: 0.02em;
+}
+
+/* ── TEXT CASES ──────────────────────────── */
+.text-cases {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.text-case {
+  background: var(--bg-dark);
+  border-radius: var(--r-lg);
+  padding: 32px 32px 36px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s var(--ease);
+}
+.text-case::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: linear-gradient(90deg, var(--accent-mid), transparent);
+}
+.text-case:hover { transform: translateY(-3px); }
+
+.text-case-tag {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--highlight);
+  margin-bottom: 14px;
+}
+.text-case-h3 {
+  font-family: var(--font-d);
+  font-size: 22px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 14px;
+}
+.text-case p {
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.52);
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+.text-case p:last-child { margin-bottom: 0; }
+
+/* ── ABOUT SECTION ───────────────────────── */
+.about-box {
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 48px 52px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  background: var(--card-bg);
+}
+
+.about-box-text p {
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--text-mid);
+  line-height: 1.75;
+  margin-bottom: 16px;
+}
+.about-box-text p:last-child { margin-bottom: 0; }
+
+.about-box-quote {
+  border-left: 3px solid var(--accent-mid);
+  padding-left: 28px;
+}
+.about-box-quote p {
+  font-family: var(--font-d);
+  font-size: clamp(16px, 1.8vw, 22px);
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.55;
+  color: var(--text-mid);
+}
+
+/* ── THEMES ──────────────────────────────── */
+.theme-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.theme-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 24px 24px 28px;
+  transition: border-color 0.2s, background 0.2s;
+}
+.theme-card:hover {
+  border-color: var(--border-mid);
+  background: var(--bg-alt);
+}
+
+.theme-card-h3 {
+  font-family: var(--font-d);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 10px;
+  line-height: 1.25;
+}
+.theme-card p {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--text-mid);
+  line-height: 1.68;
+}
+
+/* ── CTA ─────────────────────────────────── */
+.cta-section {
+  padding: 112px 0 128px;
+  text-align: center;
+}
+.cta-inner { max-width: 520px; margin: 0 auto; }
+.cta-h2 {
+  font-family: var(--font-d);
+  font-size: clamp(36px, 5vw, 60px);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text);
+  line-height: 1.05;
+  margin-bottom: 20px;
+}
+.cta-body {
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--text-mid);
+  line-height: 1.72;
+  margin-bottom: 36px;
+}
+
+/* ── FOOTER ──────────────────────────────── */
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 28px 0;
+}
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.footer-brand {
+  font-family: var(--font-d);
+  font-size: 16px;
+  color: var(--text-mid);
+}
+.footer-brand span {
+  font-size: 11px;
+  font-family: var(--font-b);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-left: 8px;
+}
+.footer-nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.footer-nav a {
+  font-size: 13px;
+  color: var(--text-muted);
+  transition: color 0.2s;
+}
+.footer-nav a:hover { color: var(--text); }
+.footer-back {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--accent-mid);
+  transition: color 0.2s;
+}
+.footer-back:hover { color: var(--accent); }
+
+/* ── ANIMATIONS ──────────────────────────── */
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(20px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+
+/* ── TABLET ──────────────────────────────── */
+@media (max-width: 1024px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    padding: 60px 36px 72px;
+  }
+  .hero-stats { gap: 24px; }
+  .case-grid  { grid-template-columns: 1fr; }
+  .text-cases { grid-template-columns: 1fr; }
+  .theme-grid { grid-template-columns: repeat(2, 1fr); }
+  .about-box  {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 36px 36px;
+  }
+  .footer-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
+}
+
+/* ── MOBILE ──────────────────────────────── */
+@media (max-width: 720px) {
+  .container { padding: 0 20px; }
+  .nav { padding: 0 20px; }
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: var(--nav-h);
+    left: 0; right: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 8px 20px 16px;
+    box-shadow: 0 8px 24px rgba(30,42,35,0.08);
+  }
+  .nav-links.is-open { display: flex; }
+  .nav-link, .nav-back {
+    padding: 13px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 15px;
+  }
+  .nav-cta { margin-top: 12px; text-align: center; border-radius: 8px; padding: 13px; }
+  .nav-toggle { display: flex; }
+
+  .hero { padding: 48px 20px 60px; }
+  .hero-actions { flex-direction: column; align-items: flex-start; }
+  .section { padding: 64px 0; }
+  .theme-grid { grid-template-columns: 1fr; }
+  .about-box { padding: 28px 24px; }
+  .cta-section { padding: 80px 0 96px; }
+  .footer-nav { flex-wrap: wrap; gap: 16px; }
+}
+  </style>
+
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wocpuxwyel");
+  </script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="/" class="nav-brand">
+      <span class="nav-brand-name">Tulkintatila</span>
+      <span class="nav-brand-lab">Lab</span>
+    </a>
+    <button class="nav-toggle" aria-label="Valikko" aria-expanded="false"
+      onclick="var e=this.getAttribute('aria-expanded')==='true';this.setAttribute('aria-expanded',e?'false':'true');document.querySelector('.nav-links').classList.toggle('is-open')">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links">
+      <a href="#caset" class="nav-link">Caset</a>
+      <a href="#teemat" class="nav-link">Teemat</a>
+      <a href="#mista-on-kyse" class="nav-link">Mistä on kyse</a>
+      <a href="https://tulkintatila.fi/" class="nav-back" target="_blank" rel="noopener">← tulkintatila.fi</a>
+      <a href="mailto:hello@tulkintatila.fi" class="nav-cta">Ota yhteyttä</a>
     </div>
-  </body>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+    <header class="hero">
+      <div class="hero-content">
+        <p class="hero-eyebrow">Tulkintatila Lab · lab.tulkintatila.fi</p>
+        <h1 class="hero-h1">
+          Käytännön rakenteet,<br>
+          <em>dokumentoitu<br>päätöslogiikka.</em>
+        </h1>
+        <p class="hero-body">
+          Lab näyttää, miten ajattelu muuttuu toimiviksi digitaalisiksi ratkaisuiksi.
+          Painopiste ei ole yleisessä esittelyssä, vaan siinä miten rakenne,
+          rajaukset ja päätöslogiikka tehdään näkyviksi.
+        </p>
+        <div class="hero-actions">
+          <a href="#caset" class="btn btn--primary">Katso caset</a>
+          <a href="mailto:hello@tulkintatila.fi" class="btn btn--ghost">Ota yhteyttä</a>
+        </div>
+      </div>
+      <div class="hero-aside">
+        <div class="hero-statement">
+          <p>"Rakenne, rajaukset, käyttötilanteet ja päätöslogiikka — ei pelkkä lopputulos."</p>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <span class="hero-stat-n">5</span>
+            <span class="hero-stat-l">kuvattua casea</span>
+          </div>
+          <div>
+            <span class="hero-stat-n">2</span>
+            <span class="hero-stat-l">teksticasea</span>
+          </div>
+          <div>
+            <span class="hero-stat-n">6</span>
+            <span class="hero-stat-l">arkkitehtuuriteemaa</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- CASET -->
+    <section class="section" id="caset">
+      <div class="container">
+        <div class="section-intro">
+          <div class="section-label">
+            <span class="section-n">01</span>
+            <span>Caset</span>
+          </div>
+          <h2 class="section-h2">Valitut caset</h2>
+          <p class="section-desc">Toteutuksia, joissa suunnittelu, järjestelmärakenne ja käyttölogiikka sidotaan samaan kokonaisuuteen.</p>
+        </div>
+
+        <div class="case-grid">
+          <article class="case-card">
+            <div class="case-img-wrap">
+              <img src="images/liminall-node.png" alt="Liminall Node -järjestelmän näkymä">
+            </div>
+            <div class="case-body">
+              <p class="case-meta">Järjestelmäarkkitehtuuri</p>
+              <h3 class="case-h3">Liminall Node</h3>
+              <p class="case-desc">Solmukohtiin perustuva järjestelmämalli, jossa sisältö, tilat ja siirtymät kuvataan erillisinä mutta toisiinsa sidottuina yksikköinä. Logiikka pysyy luettavana ilman raskasta käyttöliittymäkerrosta.</p>
+              <div class="case-tags">
+                <span class="case-tag">Rakenne</span>
+                <span class="case-tag">Tilamalli</span>
+                <span class="case-tag">Rajapinnat</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="case-card">
+            <div class="case-img-wrap">
+              <img src="images/nfc-kirja.png" alt="NFC-kirjan näkymä">
+            </div>
+            <div class="case-body">
+              <p class="case-meta">Fyysinen + digitaalinen</p>
+              <h3 class="case-h3">NFC-kirja</h3>
+              <p class="case-desc">Fyysisen objektin ja digitaalisen sisällön väliin rakennettu julkaisu- ja tunnistusratkaisu. Fyysinen kosketus laukaisee oikean digitaalisen näkymän ilman erillistä sovelluspolkua.</p>
+              <div class="case-tags">
+                <span class="case-tag">NFC</span>
+                <span class="case-tag">Sisällönohjaus</span>
+                <span class="case-tag">Julkaisu</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="case-card">
+            <div class="case-img-wrap">
+              <img src="images/ajanvaraus.png" alt="Ajanvarausjärjestelmän näkymä">
+            </div>
+            <div class="case-body">
+              <p class="case-meta">Prosessi &amp; varauslogiikka</p>
+              <h3 class="case-h3">Ajanvarausjärjestelmä</h3>
+              <p class="case-desc">Saatavuus, palvelut, vaiheet ja varauksen ehdot luetaan samasta rakenteesta. Käyttöliittymä seuraa samaa päätösmallia kuin taustalla oleva järjestelmä.</p>
+              <div class="case-tags">
+                <span class="case-tag">Saatavuus</span>
+                <span class="case-tag">Sessiot</span>
+                <span class="case-tag">Päätössäännöt</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="case-card">
+            <div class="case-img-wrap">
+              <img src="images/havainnointityokalu.png" alt="Tulkintatila-havainnointityökalun näkymä">
+            </div>
+            <div class="case-body">
+              <p class="case-meta">AI + dokumentointi</p>
+              <h3 class="case-h3">Havainnointityökalu</h3>
+              <p class="case-desc">Havaintojen kirjaamiseen, jäsentämiseen ja myöhempää tulkintaa varten rakennettu työkalu. Merkinnät, luokittelu, haku ja dokumentaatio samassa rakenteessa.</p>
+              <div class="case-tags">
+                <span class="case-tag">Havainnot</span>
+                <span class="case-tag">Luokittelu</span>
+                <span class="case-tag">Dokumentaatio</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="case-card">
+            <div class="case-img-wrap">
+              <img src="images/verkkosivustot.png" alt="Verkkosivustototeutusten näkymä">
+            </div>
+            <div class="case-body">
+              <p class="case-meta">Sisältöarkkitehtuuri</p>
+              <h3 class="case-h3">Verkkosivustot</h3>
+              <p class="case-desc">Sisältölähtöisiä verkkosivustoja, joissa rakenne, kieli ja tekninen toteutus muodostavat saman dokumentoidun kokonaisuuden. Sivusto toimii pitkän aikavälin rakenteena, ei pelkkänä esittelypintana.</p>
+              <div class="case-tags">
+                <span class="case-tag">Sisältörakenne</span>
+                <span class="case-tag">Julkaisu</span>
+                <span class="case-tag">Ylläpidettävyys</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Text cases -->
+        <div class="text-cases">
+          <article class="text-case">
+            <p class="text-case-tag">Teksticase · AI-työnkulut</p>
+            <h3 class="text-case-h3">AI-työnkulut</h3>
+            <p>Vaiheistettuja työnkulkuja, joissa AI toimii rajatuissa rooleissa osana tuotannollista järjestelmää.</p>
+            <p>Rakennettu osa sisältää roolituksen, orkestroinnin ja arviointivaiheiden erottelun — kirjoittaminen, luokittelu ja valvonta eivät sekoitu samaan kerrokseen.</p>
+            <p>Case mallintaa ongelmaa, jossa AI:n käyttö muuttuu hallittavaksi vasta, kun vaiheet, vastuut ja hyväksymisehdot tehdään eksplisiittisiksi.</p>
+          </article>
+          <article class="text-case">
+            <p class="text-case-tag">Teksticase · Myynnin tuki</p>
+            <h3 class="text-case-h3">Myyntiagentti</h3>
+            <p>Työkalu asiakkuuksien, havaintojen ja seuraavien toimenpiteiden jäsentämiseen ilman irrallista CRM-ylikerrosta.</p>
+            <p>Yhteydenotot, tilannetieto, tehtävät ja eteneminen samassa näkymässä — prosessi pysyy seurattavana ja dokumentoituna.</p>
+            <p>Case ratkaisee ongelmaa, jossa myyntityön jatkuvuus katkeaa, jos havainnot ja seuraavat vaiheet jäävät eri paikkoihin.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- MISTÄ ON KYSE -->
+    <section class="section section--alt" id="mista-on-kyse">
+      <div class="container">
+        <div class="section-intro">
+          <div class="section-label">
+            <span class="section-n">02</span>
+            <span>Mistä on kyse</span>
+          </div>
+          <h2 class="section-h2">Ei portfolio — laboratorio</h2>
+        </div>
+        <div class="about-box">
+          <div class="about-box-text">
+            <p>Tämä ei ole yleinen portfolio henkilölle tai palvelulistalle. Tulkintatila Lab toimii paikkana, jossa tehdään näkyväksi miten digitaaliset ratkaisut rakentuvat käytännössä.</p>
+            <p>Olennaista on, miten ratkaisu on rajattu, mitä sen pitää tehdä, mihin kohtaan käyttöä logiikka sijoittuu ja millä perusteilla rakenne on valittu.</p>
+            <p>Lopputulos on tärkeä, mutta myös sen perustelut kuuluvat näkyviin.</p>
+          </div>
+          <div class="about-box-quote">
+            <p>"Pelkkä lopputulos ei riitä: myös perustelut, vaihtoehdot ja hylätyt polut kuuluvat osaksi arkkitehtuuria."</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEEMAT -->
+    <section class="section" id="teemat">
+      <div class="container">
+        <div class="section-intro">
+          <div class="section-label">
+            <span class="section-n">03</span>
+            <span>Teemat</span>
+          </div>
+          <h2 class="section-h2">Arkkitehtuuriteemat</h2>
+          <p class="section-desc">Toistuvat teemat, jotka nousevat esiin casetoteutuksissa.</p>
+        </div>
+        <div class="theme-grid">
+          <article class="theme-card">
+            <h3 class="theme-card-h3">Järjestelmärajat</h3>
+            <p>Missä käyttöliittymä loppuu, missä sovelluslogiikka alkaa ja mitä ei pidä sekoittaa samaan kerrokseen.</p>
+          </article>
+          <article class="theme-card">
+            <h3 class="theme-card-h3">Infrastruktuurin minimi</h3>
+            <p>Mikä on pienin toimiva rakenne, jolla palvelu voidaan julkaista, ylläpitää ja tehdä havaittavaksi ilman turhaa monimutkaisuutta.</p>
+          </article>
+          <article class="theme-card">
+            <h3 class="theme-card-h3">Sessiot ja jatkuvuus</h3>
+            <p>Miten käyttäjätila, varausvaiheet, luonnokset tai kesken jäänyt työ säilyvät hallitusti järjestelmän eri vaiheissa.</p>
+          </article>
+          <article class="theme-card">
+            <h3 class="theme-card-h3">AI-roolit järjestelmässä</h3>
+            <p>Milloin AI toimii kirjoittajana, arvioijana, luokittelijana tai työparina — ja miten nämä roolit erotetaan toisistaan.</p>
+          </article>
+          <article class="theme-card">
+            <h3 class="theme-card-h3">Päätöslogiikka</h3>
+            <p>Millä ehdoilla järjestelmä hyväksyy, estää, siirtää tai priorisoi toimintaa, ja miten nämä säännöt tehdään näkyviksi.</p>
+          </article>
+          <article class="theme-card">
+            <h3 class="theme-card-h3">Dokumentoitu tulkinta</h3>
+            <p>Pelkkä lopputulos ei riitä: myös perustelut, vaihtoehdot ja hylätyt polut kuuluvat osaksi arkkitehtuuria.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section" id="yhteys">
+      <div class="container">
+        <div class="cta-inner">
+          <h2 class="cta-h2">Tarvitsetko oman ratkaisun?</h2>
+          <p class="cta-body">Jos valmiit työkalut eivät sovi työn rakenteeseen, niiden väliin on mahdollista rakentaa pienempi, selkeämpi ja tarkoitukseen tehty ratkaisu.</p>
+          <a href="mailto:hello@tulkintatila.fi" class="btn btn--primary btn--lg">hello@tulkintatila.fi</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        Tulkintatila <span>Lab</span>
+      </div>
+      <nav class="footer-nav">
+        <a href="#caset">Caset</a>
+        <a href="#teemat">Teemat</a>
+        <a href="mailto:hello@tulkintatila.fi">hello@tulkintatila.fi</a>
+      </nav>
+      <a href="https://tulkintatila.fi/" class="footer-back" rel="noopener">← tulkintatila.fi</a>
+    </div>
+  </footer>
+
+</body>
 </html>
