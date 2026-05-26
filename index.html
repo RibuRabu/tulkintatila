@@ -12,6 +12,14 @@
   <meta property="og:description" content="Tulkintatila Lab näyttää, miten ajattelu muuttuu toimiviksi digitaalisiksi ratkaisuiksi.">
   <meta property="og:url" content="https://lab.tulkintatila.fi/">
   <meta property="og:site_name" content="Tulkintatila Lab">
+  <meta property="og:image" content="https://lab.tulkintatila.fi/images/og-lab.png">
+  <meta property="og:image:alt" content="Tulkintatila Lab — käytännön rakenteet ja päätöslogiikka">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tulkintatila Lab — Käytännön rakenteet ja dokumentoitu päätöslogiikka">
+  <meta name="twitter:description" content="Tulkintatila Lab näyttää, miten ajattelu muuttuu toimiviksi digitaalisiksi ratkaisuiksi — rakenne ja päätöslogiikka auki.">
+  <meta name="twitter:image" content="https://lab.tulkintatila.fi/images/og-lab.png">
+  <meta name="author" content="Tulkintatila">
+  <meta name="robots" content="index, follow">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -519,7 +527,7 @@ a   { color:inherit; text-decoration:none; }
 /* ── TEXT CASES ──────────────────────────── */
 .text-cases {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 18px;
 }
 
@@ -698,6 +706,11 @@ a   { color:inherit; text-decoration:none; }
   transition: color 0.2s;
 }
 .footer-back:hover { color: var(--accent); }
+.footer-url {
+  font-size: 12px;
+  color: var(--text-muted);
+  letter-spacing: 0.03em;
+}
 
 /* ── ANIMATIONS ──────────────────────────── */
 @keyframes fadeUp {
@@ -714,7 +727,7 @@ a   { color:inherit; text-decoration:none; }
   }
   .hero-stats { gap: 24px; }
   .case-grid  { grid-template-columns: 1fr; }
-  .text-cases { grid-template-columns: 1fr; }
+  .text-cases { grid-template-columns: repeat(2, 1fr); }
   .theme-grid { grid-template-columns: repeat(2, 1fr); }
   .about-box  {
     grid-template-columns: 1fr;
@@ -760,6 +773,7 @@ a   { color:inherit; text-decoration:none; }
   .hero { padding: 48px 20px 60px; }
   .hero-actions { flex-direction: column; align-items: flex-start; }
   .section { padding: 64px 0; }
+  .text-cases { grid-template-columns: 1fr; }
   .theme-grid { grid-template-columns: 1fr; }
   .about-box { padding: 28px 24px; }
   .cta-section { padding: 80px 0 96px; }
@@ -772,6 +786,29 @@ a   { color:inherit; text-decoration:none; }
 }
   </style>
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Tulkintatila Lab",
+    "url": "https://lab.tulkintatila.fi/",
+    "description": "Tulkintatila Lab näyttää käytännön tason: rakennettuja esimerkkejä, AI-arkkitehtuureja ja digitaalisia ratkaisuja — rakenne ja päätöslogiikka näkyvissä.",
+    "inLanguage": "fi",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Tulkintatila",
+      "url": "https://tulkintatila.fi/"
+    },
+    "creator": {
+      "@type": "ProfessionalService",
+      "name": "Tulkintatila",
+      "url": "https://tulkintatila.fi/",
+      "email": "hello@tulkintatila.fi",
+      "areaServed": {"@type": "Country", "name": "Finland"},
+      "knowsAbout": ["AI-konsultointi", "digitaaliset työnkulut", "verkkosivut", "AI-arkkitehtuuri"]
+    }
+  }
+  </script>
   <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
       c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -797,7 +834,7 @@ a   { color:inherit; text-decoration:none; }
       <a href="#caset" class="nav-link">Caset</a>
       <a href="#teemat" class="nav-link">Teemat</a>
       <a href="#mista-on-kyse" class="nav-link">Mistä on kyse</a>
-      <a href="https://tulkintatila.fi/" class="nav-back" target="_blank" rel="noopener">← tulkintatila.fi</a>
+      <a href="https://tulkintatila.fi/" class="nav-back" rel="noopener">← tulkintatila.fi</a>
       <a href="mailto:hello@tulkintatila.fi" class="nav-cta">Ota yhteyttä</a>
     </div>
   </nav>
@@ -1012,6 +1049,14 @@ a   { color:inherit; text-decoration:none; }
             <p>Yhteydenotot, tilannetieto, tehtävät ja eteneminen samassa näkymässä — prosessi pysyy seurattavana ja dokumentoituna.</p>
             <p>Case ratkaisee ongelmaa, jossa myyntityön jatkuvuus katkeaa, jos havainnot ja seuraavat vaiheet jäävät eri paikkoihin.</p>
           </article>
+
+          <article class="text-case">
+            <p class="text-case-tag">Verkkosivut · Hyvinvointiala</p>
+            <h3 class="text-case-h3">Laatuhieronta.fi</h3>
+            <p>Hierontapalveluille rakennettu verkkosivusto, jonka rakenne kantaa palvelulogiikkaa — ei vain esittele. Ajanvaraus, palvelukuvaukset ja asiakaspolku samassa selkeässä kokonaisuudessa.</p>
+            <p>Sivusto palvelee hyvinvointialan asiakaskuntaa, jossa luottamus rakentuu ennen varausta. Rakenne, kieli ja ulkoasu tukevat tätä prosessia alusta loppuun.</p>
+            <p><a href="https://www.laatuhieronta.fi/" target="_blank" rel="noopener" style="color:var(--highlight);text-decoration:underline;text-underline-offset:3px;">www.laatuhieronta.fi ↗</a></p>
+          </article>
         </div>
       </div>
     </section>
@@ -1104,6 +1149,7 @@ a   { color:inherit; text-decoration:none; }
         <a href="mailto:hello@tulkintatila.fi">hello@tulkintatila.fi</a>
       </nav>
       <a href="https://tulkintatila.fi/" class="footer-back" rel="noopener">← tulkintatila.fi</a>
+      <span class="footer-url">lab.tulkintatila.fi</span>
     </div>
   </footer>
 
