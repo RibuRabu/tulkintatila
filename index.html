@@ -20,15 +20,22 @@
   <meta name="twitter:image" content="https://lab.tulkintatila.fi/images/og-lab.png">
   <meta name="author" content="Tulkintatila">
   <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#2f4739">
+  <meta name="geo.region" content="FI-18">
+  <meta name="geo.placename" content="Helsinki, Suomi">
+  <meta name="geo.position" content="60.1699;24.9384">
+  <meta name="ICBM" content="60.1699, 24.9384">
 
+  <link rel="preconnect" href="https://api.fontshare.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 
   <style>
 /* ============================================
    TULKINTATILA LAB
-   Newsreader + DM Sans · Green editorial
+   Satoshi + IBM Plex Sans · Green editorial
    ============================================ */
 :root {
   --bg:         #eef3ef;
@@ -44,8 +51,8 @@
   --card-bg:    #f0f6f1;
   --highlight:  #b8d4c0;
   --tag-bg:     #ddeee3;
-  --font-d: 'Newsreader', Georgia, serif;
-  --font-b: 'DM Sans', system-ui, -apple-system, sans-serif;
+  --font-d: 'Satoshi', 'PP Neue Montreal', system-ui, -apple-system, sans-serif;
+  --font-b: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
   --nav-h:    64px;
   --max-w:    1120px;
   --r:        10px;
@@ -795,24 +802,53 @@ a   { color:inherit; text-decoration:none; }
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Tulkintatila Lab",
-    "url": "https://lab.tulkintatila.fi/",
-    "description": "Tulkintatila Lab näyttää käytännön tason: rakennettuja esimerkkejä, AI-arkkitehtuureja ja digitaalisia ratkaisuja — rakenne ja päätöslogiikka näkyvissä.",
-    "inLanguage": "fi",
-    "isPartOf": {
-      "@type": "WebSite",
-      "name": "Tulkintatila",
-      "url": "https://tulkintatila.fi/"
-    },
-    "creator": {
-      "@type": "ProfessionalService",
-      "name": "Tulkintatila",
-      "url": "https://tulkintatila.fi/",
-      "email": "hello@tulkintatila.fi",
-      "areaServed": {"@type": "Country", "name": "Finland"},
-      "knowsAbout": ["AI-konsultointi", "digitaaliset työnkulut", "verkkosivut", "AI-arkkitehtuuri"]
-    }
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://tulkintatila.fi/#website",
+        "url": "https://tulkintatila.fi/",
+        "name": "Tulkintatila",
+        "inLanguage": "fi"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://lab.tulkintatila.fi/#website",
+        "url": "https://lab.tulkintatila.fi/",
+        "name": "Tulkintatila Lab",
+        "inLanguage": "fi",
+        "isPartOf": {"@id": "https://tulkintatila.fi/#website"}
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://lab.tulkintatila.fi/#webpage",
+        "url": "https://lab.tulkintatila.fi/",
+        "name": "Tulkintatila Lab — Käytännön rakenteet ja dokumentoitu päätöslogiikka",
+        "description": "Tulkintatila Lab näyttää käytännön tason: rakennettuja esimerkkejä, AI-arkkitehtuureja ja digitaalisia ratkaisuja — rakenne ja päätöslogiikka näkyvissä.",
+        "inLanguage": "fi",
+        "isPartOf": {"@id": "https://lab.tulkintatila.fi/#website"},
+        "about": {
+          "@type": "ProfessionalService",
+          "@id": "https://tulkintatila.fi/#business",
+          "name": "Tulkintatila",
+          "url": "https://tulkintatila.fi/",
+          "email": "hello@tulkintatila.fi",
+          "areaServed": {"@type": "Country", "name": "Finland"},
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "FI",
+            "addressRegion": "Uusimaa"
+          },
+          "knowsAbout": [
+            "AI-konsultointi",
+            "tekoälyarkkitehtuuri",
+            "digitaaliset työnkulut",
+            "verkkosivut",
+            "compliance-työkalut",
+            "NFC-teknologia"
+          ]
+        }
+      }
+    ]
   }
   </script>
   <script type="text/javascript">
