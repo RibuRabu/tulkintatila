@@ -563,7 +563,10 @@ a   { color:inherit; text-decoration:none; }
   position: relative;
   overflow: hidden;
   transition: transform 0.25s var(--ease);
+  display: flex;
+  flex-direction: column;
 }
+.text-case a { margin-top: auto; padding-top: 18px; }
 .text-case::before {
   content: '';
   position: absolute;
@@ -1137,7 +1140,7 @@ a   { color:inherit; text-decoration:none; }
             <p class="text-case-tag">SaaS · Omavalvonta · Terveys- ja hyvinvointiala</p>
             <h3 class="text-case-h3">Laatuhieronta.fi</h3>
             <p>Laki velvoittaa terveys- ja hyvinvointialan mikroyrittäjät pitämään omavalvontasuunnitelman — mutta harva tietää mitä se tarkoittaa tai miten se tehdään.</p>
-            <p>Selainpohjainen työkalu, joka ohjaa suunnitelman läpi tunnissa: lomake, julkinen linkki, poikkeamakirjaukset ja automaattiset muistutukset. Landing flow johtaa suoraan äppiin — ei välivaiheita.</p>
+            <p>Selainpohjainen SaaS, joka ohjaa suunnitelman läpi tunnissa. Landing flow johtaa suoraan äppiin — ei välivaiheita, ei paperityötä.</p>
             <a href="https://www.laatuhieronta.fi/" target="_blank" rel="noopener" style="display:inline-block;margin-top:14px;font-size:13px;font-weight:500;color:var(--highlight);text-decoration:underline;text-underline-offset:3px;">www.laatuhieronta.fi ↗</a>
           </article>
         </div>
